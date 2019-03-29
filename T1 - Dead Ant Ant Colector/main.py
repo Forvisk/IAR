@@ -10,7 +10,6 @@ nItens = 15
 nFormigas = 5
 ambiente = []
 agentes = []
-tempoExecucao = 0
 tempoMaximo = 2
 
 ## Matriz
@@ -23,10 +22,10 @@ def main( ):
 	#print(ambiente)
 	inicializa()
 
-	tempoExecucao = 0
-	while tempoExecucao < tempoMaximo:
-		tempoExecucao += 1
-		time.sleep(15)
+	tempoMaximo = 2
+	while tempoMaximo > 0:
+		tempoMaximo -= 1
+		time.sleep(5)
 		print(ambiente)
 
 
@@ -70,7 +69,7 @@ def contaItens():
 			if ( ambiente[i][j] == 1):
 				contItens += 1
 			else:
-				if ( ambiente[i][j] > 2):
+				if ( ambiente[i][j] >= 2):
 					contFormigas += 1
 	print(contItens, ' Itens\n', contFormigas, ' formigas')
 	return [contItens, contItens]
@@ -78,11 +77,11 @@ def contaItens():
 #### Classe Ant
 #
 class Ant (threading.Thread):
-	code = 0
 	posX = 0
 	posY = 0
-	nextmove = [ 1, 1]
+	nextmove = [ 0,0]
 	carry = False
+	nIt = 15
 	
 	def __init__(self, threadID, pos):
 		threading.Thread.__init__(self)
@@ -91,11 +90,16 @@ class Ant (threading.Thread):
 		self.posY = pos[1]
 
 	def run(self):
-		print( 'Iniciando formiga ', self.threadID, ' em posicao [', self.posX, ',', self.posY, ']')
+		while  len(threading.enumerate()) < nFormigas:
+			continue
+		print( self.threadID, ' - Iniciando formiga em posicao [', self.posX, ',', self.posY, ']')
+		#print( self.threadID, ' - nThreads alive', len(threading.enumerate()))
 		#print_time( self.threadID, 3, 1)
-		self.decide()
-		self.move()
-		print( 'Finalizando ', self.threadID)
+		while self.nIt > 0:	
+			self.decide()
+			self.move()
+			self.nIt -= 1
+		print( self.threadID, ' - Finalizando em posicao [', self.posX, ',', self.posY, ']')
 
 	#Funções decisoras
 	# eixoX 1 = direita, -1 = esquerda
@@ -108,6 +112,7 @@ class Ant (threading.Thread):
 		else:	# Movimento
 			Lx = Ly = 1
 			lx = ly = -1
+			vet = np.zeros( [3,3])
 			if self.posX+1 >= n:
 				Lx = 0
 			if self.posX-1 < 0:
@@ -117,21 +122,21 @@ class Ant (threading.Thread):
 			if self.posY-1 < 0:
 				ly = 0
 			print( self.threadID, ' - ', lx, Lx, ly, Ly)
-
-			for x in range( lx, Lx):
-				for y in range( ly, Ly):
-					if ( x != 0 and y != 0):
-						if ()
-			pass
-		pass
+			#lx = self.posX + lx
+			#ly = self.posY + ly
+			#Lx = self.posX + Lx
+			#Ly = self.posY + Ly
+			self.nextmove[0] = randint(lx, Lx)
+			self.nextmove[1] = randint(ly, Ly)	
 
 	def move( self):
 		#lock ambiente
-		ambiente[ self.posX][ self.posY] -= 2
-		self.posX += self.nextmove[0]
-		self.posX += self.nextmove[1]
-		print( '[', self.posX, ',', self.posY, ']')
-		ambiente[ self.posX][ self.posY] += 2
+		if ( ambiente[ self.posX + self.nextmove[0]][ self.posY + self.nextmove[1]] < 2 ):
+			ambiente[ self.posX][ self.posY] -= 2
+			self.posX += self.nextmove[0]
+			self.posY += self.nextmove[1]
+			print( self.threadID, ' - [', self.posX, ',', self.posY, ']')
+			ambiente[ self.posX][ self.posY] += 2
 		#unlockambiente
 
 #
