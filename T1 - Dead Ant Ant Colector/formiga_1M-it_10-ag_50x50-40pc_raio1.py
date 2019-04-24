@@ -25,6 +25,7 @@ agentes = []
 threadLock = threading.Lock()
 threadLockIteracao = threading.Lock()
 numIt = 0
+outputFile = "iteracoes/"+str(randint(0,1000))+'_rv'+str(RAIOVISAO)+'_nf'+str(NUM_FORMIGAS)
 
 ## Matriz
 ## vazio = 0
@@ -48,26 +49,38 @@ class Animacao( object):
 		self.matrice.set_array(ambiente)
 
 def salvaImagem():
+	outputFile = "iteracoes/"+str(randint(0,1000))+'_rv'+str(RAIOVISAO)+'_nf'+str(NUM_FORMIGAS)
 	nIt = numIt
-	outputFile = "iteracoes/"+str(randint(0,1000))
+	imagem = ambiente*25
+	saving = outputFile+'-'+str(nIt).zfill(10)+'.png'
+	sm.imsave( saving, imagem)
 	while nIt < NUM_ITERACAO:
+		time.sleep(10)
+		threadLockIteracao.acquire()
 		nIt = numIt
 		imagem = ambiente*25
 		saving = outputFile+'-'+str(nIt).zfill(10)+'.png'
 		sm.imsave( saving, imagem)
-		#print('Main - saving',saving)
-		time.sleep(5)
+		threadLockIteracao.release()
+		print('Main - saving',saving)
+	print('Finalizando Save')
 
+def salvaImagem2():
+	nIt = numIt
+	imagem = ambiente * 25
+	saving = outputFile+'-'+str(nIt).zfill(10)+'.png'
+	sm.imsave( saving, imagem)
+	print('Main - saving',saving)
 
 def main():
-	#fig, ax = plt.subplots()
-	#ani = Animacao(ax)
+	fig, ax = plt.subplots()
+	ani = Animacao(ax)
 	#print(ambiente)
 	inicializa()
-	#plt.colorbar(matrice)
-	#ani = animation.FuncAnimation(fig, ani.update, frames=1, interval=1000)
-	#plt.show()
-	salvaImagem()
+	
+	ani = animation.FuncAnimation(fig, ani.update, frames=1, interval=1000)
+	plt.show()
+	#salvaImagem()
 	#time.sleep(5)
 	for t in agentes:
 		t.join()
@@ -145,7 +158,7 @@ class Ant (threading.Thread):
 			continue
 		print( 'Ant', repr(self.threadID).zfill(3), '0- Iniciando formiga em posicao [', self.posX, ',', self.posY, ']')
 		while numIt < NUM_ITERACAO:
-			#print( 'Ant', repr(self.threadID).zfill(3), ':it', repr(self.nIt).zfill(10), self.carry,'-0pos',[self.posX, self.posY])
+			print( 'Ant', repr(self.threadID).zfill(3), ':it', repr(self.nIt).zfill(10), self.carry,'-0pos',[self.posX, self.posY])
 			if self.decide():
 				if self.haveFocus:
 					self.moveToFocus()
@@ -154,14 +167,22 @@ class Ant (threading.Thread):
 				self.move()
 			if SLEEP:
 				time.sleep(0.001)
-			#print( 'Ant', repr(self.threadID).zfill(3), ':it', repr(self.nIt).zfill(10), self.carry,'-zpos',[self.posX, self.posY])
+			print( 'Ant', repr(self.threadID).zfill(3), ':it', repr(self.nIt).zfill(10), self.carry,'-zpos',[self.posX, self.posY])
 			threadLockIteracao.acquire()
-			numIt += 1
 			self.nIt = numIt
+
+			if self.nIt % 500 == 0:
+				threadLock.acquire()
+				salvaImagem2()
+				threadLock.release()
+
+			numIt += 1
+			print('Ant', repr(self.threadID).zfill(3), ':it', repr(self.nIt).zfill(10))
 			threadLockIteracao.release()
 		print( 'Ant', repr(self.threadID).zfill(3), 'X- Finalizando em posicao',[self.posX, self.posY])
 
 	def decide( self):
+		print('Ant', repr(self.threadID).zfill(3), ':it', repr(self.nIt).zfill(10),'decide')
 		if (ambiente[ self.posX][self.posY] == 3 and self.carry == 0 and not self.iteragiu):	# Item na posição da formiga
 			if self.sobreItem():
 				self.iteragiu = False
@@ -202,6 +223,7 @@ class Ant (threading.Thread):
 		#print( 'Ant', repr(self.threadID).zfill(3), ':it', repr(self.nIt).zfill(10), self.carry, ' - livre', contL, '; itens', contI, '; taxa', taxa)
 		contrataxa = randint(0,100)/100
 		if(  contrataxa >= taxa):
+			print('Ant', repr(self.threadID).zfill(3), ':it', repr(self.nIt).zfill(10),'sobreItem - threadLock')
 			threadLock.acquire()
 			if( ambiente[self.posX][self.posY] == 3):
 				ambiente[self.posX][self.posY] = 4
@@ -239,6 +261,7 @@ class Ant (threading.Thread):
 		contrataxa = randint(0,100)/100
 
 		if(  contrataxa > taxa):
+			print('Ant', repr(self.threadID).zfill(3), ':it', repr(self.nIt).zfill(10),'carregandoItem - threadLock')
 			threadLock.acquire()
 			if( ambiente[self.posX][self.posY] == 4):
 				ambiente[self.posX][self.posY] = 3
@@ -251,6 +274,7 @@ class Ant (threading.Thread):
 			return True
 
 	def moveToFocus(self):
+		print('Ant', repr(self.threadID).zfill(3), ':it', repr(self.nIt).zfill(10),'moveToFocus')
 		movX = self.focus[0]-self.posX
 		movY = self.focus[1]-self.posY
 		if movX == 0 and movY == 0:
@@ -273,9 +297,10 @@ class Ant (threading.Thread):
 				self.nextmove = [0,0]
 				self.decideMove()
 				self.haveFocus = False
-				#print('Ant', repr(self.threadID).zfill(3), ':it', repr(self.nIt).zfill(10), self.carry, '-moveToFocus-pos', [ self.posX, self.posY],'perde o foco da posição',self.focus)
+				print('Ant', repr(self.threadID).zfill(3), ':it', repr(self.nIt).zfill(10), self.carry, '-moveToFocus-pos', [ self.posX, self.posY],'perde o foco da posição',self.focus)
 		
 	def decideMove(self):
+		print('Ant', repr(self.threadID).zfill(3), ':it', repr(self.nIt).zfill(10),'decideMove')
 		contL = 0
 		contI = 0
 		lx = max( -RAIOVISAO, -self.posX)
@@ -319,15 +344,16 @@ class Ant (threading.Thread):
 			self.getFocus(contL, posVazios)
 			
 	def move( self):
+		print('Ant', repr(self.threadID).zfill(3), ':it', repr(self.nIt).zfill(10),'move - threadLock')
 		threadLock.acquire() #lock ambiente
 		k1 = self.posX + self.nextmove[0]
 		k2 = self.posY + self.nextmove[1]
 		#print('Ant',repr(self.nIt).zfill(10), self.carry, ':it', repr(self.nIt).zfill(10), self.carry, ':', k1, k2)
 		if (k1 >= N or k2 >= M):
 			return
-			print( 'Ant', repr(self.threadID).zfill(3), ':it', repr(self.nIt).zfill(10), self.carry, '-move- se move de', [self.posX, self.posY], ' para ', [k1, k2], 'se batendo na parede')
+			#print( 'Ant', repr(self.threadID).zfill(3), ':it', repr(self.nIt).zfill(10), self.carry, '-move- se move de', [self.posX, self.posY], ' para ', [k1, k2], 'se batendo na parede')
 		elif(ambiente[ k1][ k2] < 2 ):
-			print( 'Ant', repr(self.threadID).zfill(3), ':it', repr(self.nIt).zfill(10), self.carry, '-move- se move de', [self.posX, self.posY], ' para ', [k1, k2], '(', [self.nextmove[0],self.nextmove[1]], ')')
+			#( 'Ant', repr(self.threadID).zfill(3), ':it', repr(self.nIt).zfill(10), self.carry, '-move- se move de', [self.posX, self.posY], ' para ', [k1, k2], '(', [self.nextmove[0],self.nextmove[1]], ')')
 			ambiente[ self.posX][ self.posY] -= (2 + self.carry)
 			self.posX = k1
 			self.posY = k2
@@ -335,6 +361,7 @@ class Ant (threading.Thread):
 		threadLock.release()	#unlockambiente
 
 	def getFocus(self, cont, vetorPontos):
+		print('Ant', repr(self.threadID).zfill(3), ':it', repr(self.nIt).zfill(10),'getFocus')
 		taxa = cont/((RAIOVISAO*RAIOVISAO + RAIOVISAO)*2)
 		contrataxa = randint(0,100)/100
 

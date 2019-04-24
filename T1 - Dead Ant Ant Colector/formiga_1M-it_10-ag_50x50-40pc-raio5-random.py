@@ -13,7 +13,7 @@ import time
 N = 50
 M = 50
 PORCENT_ITENS = 40
-NUM_ITERAC_POR_FORMIGA = 1000
+NUM_ITERAC_POR_FORMIGA = 100000
 NUM_ITENS = (N*M*PORCENT_ITENS)/100
 NUM_FORMIGAS = 10
 RAIOVISAO = 5
@@ -25,7 +25,6 @@ agentes = []
 threadLock = threading.Lock()
 threadLockIteracao = threading.Lock()
 numIt = 0
-outputFile = "iteracoes/"+str(randint(0,1000))+'_rv'+str(RAIOVISAO)+'_nf'+str(NUM_FORMIGAS)
 
 ## Matriz
 ## vazio = 0
@@ -49,7 +48,7 @@ class Animacao( object):
 		self.matrice.set_array(ambiente)
 
 def salvaImagem():
-	outputFile = "iteracoes/"+str(randint(0,1000))+'_rv'+str(RAIOVISAO)+'_nf'+str(NUM_FORMIGAS)
+	outputFile = "iteracoes/"+str(randint(0,1000))+'_random_rv'+str(RAIOVISAO)+'_nf'+str(NUM_FORMIGAS)
 	nIt = numIt
 	imagem = ambiente*25
 	saving = outputFile+'-'+str(nIt).zfill(10)+'.png'
@@ -65,22 +64,16 @@ def salvaImagem():
 		print('Main - saving',saving)
 	print('Finalizando Save')
 
-def salvaImagem2():
-	nIt = numIt
-	imagem = ambiente * 25
-	saving = outputFile+'-'+str(nIt).zfill(10)+'.png'
-	sm.imsave( saving, imagem)
-	print('Main - saving',saving)
 
 def main():
-	fig, ax = plt.subplots()
-	ani = Animacao(ax)
+	#fig, ax = plt.subplots()
+	#ani = Animacao(ax)
 	#print(ambiente)
 	inicializa()
-	
-	ani = animation.FuncAnimation(fig, ani.update, frames=1, interval=1000)
-	plt.show()
-	#salvaImagem()
+	#plt.colorbar(matrice)
+	#ani = animation.FuncAnimation(fig, ani.update, frames=1, interval=1000)
+	#plt.show()
+	salvaImagem()
 	#time.sleep(5)
 	for t in agentes:
 		t.join()
@@ -169,14 +162,8 @@ class Ant (threading.Thread):
 				time.sleep(0.001)
 			#print( 'Ant', repr(self.threadID).zfill(3), ':it', repr(self.nIt).zfill(10), self.carry,'-zpos',[self.posX, self.posY])
 			threadLockIteracao.acquire()
-			self.nIt = numIt
-
-			if self.nIt % 500 == 0:
-				threadLock.acquire()
-				salvaImagem2()
-				threadLock.release()
-
 			numIt += 1
+			self.nIt = numIt
 			print('Ant', repr(self.threadID).zfill(3), ':it', repr(self.nIt).zfill(10))
 			threadLockIteracao.release()
 		print( 'Ant', repr(self.threadID).zfill(3), 'X- Finalizando em posicao',[self.posX, self.posY])
@@ -220,7 +207,7 @@ class Ant (threading.Thread):
 						contI += 1
 					else:
 						contL += 1
-		taxa = (contI) / 8
+		taxa = (contI+1) / 10
 		#print( 'Ant', repr(self.threadID).zfill(3), ':it', repr(self.nIt).zfill(10), self.carry, ' - livre', contL, '; itens', contI, '; taxa', taxa)
 		contrataxa = randint(0,100)/100
 		if(  contrataxa >= taxa):
@@ -258,7 +245,7 @@ class Ant (threading.Thread):
 						contI += 1
 					else:
 						contL += 1
-		taxa = 1-((contI) / 8)
+		taxa = 1-((contI+1) / 10)
 		contrataxa = randint(0,100)/100
 
 		if(  contrataxa > taxa):
