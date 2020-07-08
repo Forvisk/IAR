@@ -5,20 +5,26 @@ import matplotlib.animation as animation
 from random import randint
 import threading
 import time
+import imageio as img	# novo package de imagem
 #
 # Voo de Levy
 # Como melhorar:
 # Melhorar o Determinismo
 
+# 
+# Fazer as formigas continuarem até largar o item caso esteja carregando 
+# um item após passar o limite de iterações.
+
 N = 50
 M = 50
-PORCENT_ITENS = 40
-NUM_ITERAC_POR_FORMIGA = 1000
+PORCENT_ITENS = 50
+NUM_ITERAC_POR_FORMIGA = 10000
 NUM_ITENS = (N*M*PORCENT_ITENS)/100
-NUM_FORMIGAS = 10
-RAIOVISAO = 5
+NUM_FORMIGAS = 20
+RAIOVISAO = 1
 NUM_ITERACAO = NUM_FORMIGAS * NUM_ITERAC_POR_FORMIGA
 SLEEP = False
+DIVTAXA = ((RAIOVISAO*2+1) * (RAIOVISAO*2+1)) -1
 
 ambiente = []
 agentes = []
@@ -53,14 +59,17 @@ def salvaImagem():
 	nIt = numIt
 	imagem = ambiente*25
 	saving = outputFile+'-'+str(nIt).zfill(10)+'.png'
-	sm.imsave( saving, imagem)
+	#sm.imsave( saving, imagem)
+	img.imwrite(saving, imagem)
 	while nIt < NUM_ITERACAO:
 		time.sleep(10)
 		threadLockIteracao.acquire()
 		nIt = numIt
 		imagem = ambiente*25
 		saving = outputFile+'-'+str(nIt).zfill(10)+'.png'
-		sm.imsave( saving, imagem)
+		#sm.imsave( saving, imagem)
+		img.imwrite(saving, imagem)
+
 		threadLockIteracao.release()
 		print('Main - saving',saving)
 	print('Finalizando Save')
@@ -69,7 +78,8 @@ def salvaImagem2():
 	nIt = numIt
 	imagem = ambiente * 25
 	saving = outputFile+'-'+str(nIt).zfill(10)+'.png'
-	sm.imsave( saving, imagem)
+	#sm.imsave( saving, imagem)
+	img.imwrite(saving, imagem)
 	print('Main - saving',saving)
 
 def main():
@@ -157,7 +167,7 @@ class Ant (threading.Thread):
 		while  len(threading.enumerate()) < NUM_FORMIGAS:
 			continue
 		print( 'Ant', repr(self.threadID).zfill(3), '0- Iniciando formiga em posicao [', self.posX, ',', self.posY, ']')
-		while numIt < NUM_ITERACAO:
+		while numIt < NUM_ITERACAO or self.carry == 2 :
 			#print( 'Ant', repr(self.threadID).zfill(3), ':it', repr(self.nIt).zfill(10), self.carry,'-0pos',[self.posX, self.posY])
 			if self.decide():
 				if self.haveFocus:
@@ -220,7 +230,8 @@ class Ant (threading.Thread):
 						contI += 1
 					else:
 						contL += 1
-		taxa = (contI) / 8
+		#taxa = (contI) / 8
+		taxa = (contI) / DIVTAXA
 		#print( 'Ant', repr(self.threadID).zfill(3), ':it', repr(self.nIt).zfill(10), self.carry, ' - livre', contL, '; itens', contI, '; taxa', taxa)
 		contrataxa = randint(0,100)/100
 		if(  contrataxa >= taxa):
@@ -234,7 +245,8 @@ class Ant (threading.Thread):
 		else:
 			#print( 'Ant', repr(self.threadID).zfill(3), ':it', repr(self.nIt).zfill(10), self.carry,'-sobreItem-pos', [self.posX, self.posY], '- não pega item -', contrataxa, '<',taxa, '; L:', contL, '; I:', contI)
 			return True
-		
+	
+
 	def carregandoItem(self):
 		print('Ant', repr(self.threadID).zfill(3), ':it', repr(self.nIt).zfill(10),'carregandoItem')
 		if (self.posX != self.focus[0] and self.posY != self.focus[1]) and self.haveFocus:
@@ -258,7 +270,9 @@ class Ant (threading.Thread):
 						contI += 1
 					else:
 						contL += 1
-		taxa = 1-((contI) / 8)
+		# Alterada a taxa para ser relacionado ao raio da visão
+		#taxa = 1-((contI) / 8)
+		taxa = 1-((contI) / DIVTAXA)
 		contrataxa = randint(0,100)/100
 
 		if(  contrataxa > taxa):
@@ -272,6 +286,7 @@ class Ant (threading.Thread):
 		else:
 			#print( 'Ant', repr(self.threadID).zfill(3), ':it', repr(self.nIt).zfill(10), self.carry,'-carregandoItem-pos:', [self.posX, self.posY], '- não solta item -', contrataxa, '<',taxa, '; L:', contL, '; I:', contI)
 			return True
+
 
 	def moveToFocus(self):
 		print('Ant', repr(self.threadID).zfill(3), ':it', repr(self.nIt).zfill(10),'moveToFocus')
@@ -298,7 +313,8 @@ class Ant (threading.Thread):
 				self.decideMove()
 				self.haveFocus = False
 				print('Ant', repr(self.threadID).zfill(3), ':it', repr(self.nIt).zfill(10), self.carry, '-moveToFocus-pos', [ self.posX, self.posY],'perde o foco da posição',self.focus)
-		
+	
+
 	def decideMove(self):
 		print('Ant', repr(self.threadID).zfill(3), ':it', repr(self.nIt).zfill(10),'decideMove')
 		contL = 0
@@ -343,6 +359,7 @@ class Ant (threading.Thread):
 		elif( len( posVazios) > 0 and self.carry == 2):
 			self.getFocus(contL, posVazios)
 			
+
 	def move( self):
 		print('Ant', repr(self.threadID).zfill(3), ':it', repr(self.nIt).zfill(10),'move')
 		threadLock.acquire() #lock ambiente
@@ -359,6 +376,7 @@ class Ant (threading.Thread):
 			self.posY = k2
 			ambiente[ self.posX][ self.posY] += (2 + self.carry)
 		threadLock.release()	#unlockambiente
+
 
 	def getFocus(self, cont, vetorPontos):
 		print('Ant', repr(self.threadID).zfill(3), ':it', repr(self.nIt).zfill(10),'getFocus')
@@ -383,7 +401,8 @@ class Ant (threading.Thread):
 				pontosEscolhidos.append(vetorPontos[i])
 		qualFoco = randint(0,len(pontosEscolhidos)-1)
 		#print('Ant', repr(self.threadID).zfill(3), ':it', repr(self.nIt).zfill(10), self.carry, '-getFocus-pos', [ self.posX, self.posY], pontosEscolhidos,':',qualFoco,';nv',number)
-		taxa = number/8
+		#taxa = number/8
+		taxa = number/DIVTAXA
 		contrataxa = randint(0,100)/100
 		#print('Ant', repr(self.threadID).zfill(3), ':it', repr(self.nIt).zfill(10), self.carry, '-getFocus-',contrataxa,taxa)
 		if contrataxa > taxa and self.carry == 0:

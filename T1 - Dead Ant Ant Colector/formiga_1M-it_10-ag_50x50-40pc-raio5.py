@@ -5,6 +5,7 @@ import matplotlib.animation as animation
 from random import randint
 import threading
 import time
+import imageio as img	# novo package de imagem
 #
 # Voo de Levy
 # Como melhorar:
@@ -53,14 +54,16 @@ def salvaImagem():
 	nIt = numIt
 	imagem = ambiente*25
 	saving = outputFile+'-'+str(nIt).zfill(10)+'.png'
-	sm.imsave( saving, imagem)
+	#sm.imsave( saving, imagem)
+	img.imwrite(saving, imagem)
 	while nIt < NUM_ITERACAO:
 		time.sleep(10)
 		threadLockIteracao.acquire()
 		nIt = numIt
 		imagem = ambiente*25
 		saving = outputFile+'-'+str(nIt).zfill(10)+'.png'
-		sm.imsave( saving, imagem)
+		#sm.imsave( saving, imagem)
+		img.imwrite(saving, imagem)
 		threadLockIteracao.release()
 		print('Main - saving',saving)
 	print('Finalizando Save')
@@ -69,7 +72,8 @@ def salvaImagem2():
 	nIt = numIt
 	imagem = ambiente * 25
 	saving = outputFile+'-'+str(nIt).zfill(10)+'.png'
-	sm.imsave( saving, imagem)
+	#sm.imsave( saving, imagem)
+	img.imwrite(saving, imagem)
 	print('Main - saving',saving)
 
 def main():
