@@ -1,3 +1,4 @@
+import sys
 import numpy as np
 import scipy.misc as sm
 import matplotlib.pyplot as plt
@@ -10,6 +11,9 @@ import imageio as img	# novo package de imagem
 # Voo de Levy
 # Como melhorar:
 # Melhorar o Determinismo
+ALPHA = 1
+KA1 = 1
+KA2 = 1
 
 N = 50
 M = 50
@@ -26,8 +30,10 @@ N_TIPO_ITENS = 4
 D_DADO = 2 # dimensão do dado a ser trabalhado
 ALPHA = 1 # não pode ser 0
 
-ambiente = []
+ambiente = []	#utiliza 
 dados = []	# se tem itens, sera usado no lugar do ambiente
+itens = []	# lista de itens
+
 agentes = []
 threadLock = threading.Lock()
 threadLockIteracao = threading.Lock()
@@ -131,7 +137,7 @@ class Ant (threading.Thread):
 	nextmove = [ 0,0]
 	carry = 0
 	nIt = 0
-	carga
+	carga = -1
 	
 	def __init__(self, threadID, pos):
 		threading.Thread.__init__(self)
@@ -441,12 +447,25 @@ def vizinhanca(ponto):
 						nVizinhos += 1
 	return nVizinhos
 
+def lerArquivo():
+	pass
+
+def mainArquivo( argv):
+	pass
+
+def mainSemArquivo():
+	size = [N,M]
+	ambiente = np.ones( size)
+	dados = np.zeros( sizeDados)
+	numIt = 0
+	main()
+	contaItens()
+
 print('Iniciando')
-size = [N,M]
-sizeDados = [N, M, D_DADO]
-ambiente = np.ones( size)
-dados = np.zeros( sizeDados)
-numIt = 0
-main()
-contaItens()
+if (len(sys.argv) > 1):
+	print("Arquivo de entrada encontrado "+sys.argv)
+	mainArquivo( sys.argv)
+else:
+	mainSemArquivo()
+
 print('Finalizando')
