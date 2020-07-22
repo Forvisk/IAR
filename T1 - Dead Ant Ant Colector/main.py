@@ -15,9 +15,9 @@ import imageio as img	# novo package de imagem
 # Fazer as formigas continuarem até largar o item caso esteja carregando 
 # um item após passar o limite de iterações.
 
-N = 50
-M = 50
-PORCENT_ITENS = 50
+N = 31
+M = 31
+PORCENT_ITENS = 40
 NUM_ITERAC_POR_FORMIGA = 10000
 NUM_ITENS = (N*M*PORCENT_ITENS)/100
 NUM_FORMIGAS = 20

@@ -16,14 +16,14 @@ from skimage import img_as_ubyte
 ALPHA = 20	# ñao pode ser 0
 KA1 = 1
 KA2 = 1
-RAIOVISAO = 1
+RAIOVISAO = 5
 
 NUM_FORMIGAS = 25
 N = 0
 M = 0
 NUM_ITENS = 0
 
-NUM_ITERAC_POR_FORMIGA = 100000
+NUM_ITERAC_POR_FORMIGA = 10000
 SLEEP = False
 NUM_ITERACAO = NUM_FORMIGAS * NUM_ITERAC_POR_FORMIGA
 
@@ -45,6 +45,8 @@ numIt = 0
 
 outputFile = "error"
 outputVector = []
+
+cores = [[0,0,255],[0,255,0],[255,0,0],[255,255,0],[0,255,255],[255,0,255],[100,100,0],[0,100,100],[100,0,100],[50,0,50],[0,0,50],[0,50,0],[0,50,50],[50,50,0],[10,10,10]]
 
 ## Matriz
 ## vazio = 1
@@ -91,13 +93,12 @@ class Animacao( object):
 		global N_TIPO_ITENS
 		global outputFile 
 		global ambiente
-		outputFile = "iteracoes/"+str(randint(0,1000))+'_rv'+str(RAIOVISAO)+'_nf'+str(NUM_FORMIGAS)
 		ambiente[0][0] = N_TIPO_ITENS+1
 		ambiente[0][1] = -(N_TIPO_ITENS+1)
 
 		self.ax = ax
 		self.matrice = ax.matshow((ambiente))
-		plt.colorbar(self.matrice)
+		plt.colorbar(self.matrice, extend='min')
 		
 		ambiente[0][0] = 1
 		ambiente[0][1] = 1
@@ -108,19 +109,27 @@ class Animacao( object):
 
 def salvaImagem2(nIt):
 	global N_TIPO_ITENS
+	global cores
+	global ambiente
+	print('Saving ',nIt)
+	
 	imagem = np.zeros([N,M,3]).astype(np.uint8)
 	for x in range(0, N):
 		for y in range(0,M):
-			if abs(ambiente[x][y]) > 1:
-				imagem[x][y][0] = int((abs(ambiente[x][y]) -1) * (200/N_TIPO_ITENS))
-				imagem[x][y][1] = 255-255/int((abs(ambiente[x][y]) -1))
-				imagem[x][y][2] = int((abs(ambiente[x][y]) -1) * (20/N_TIPO_ITENS))
+			cor = int(abs(ambiente[x][y])-2)
+			#print(int(abs(ambiente[x][y])-1), cor)
+			if abs(ambiente[x][y]) > 0:
+				imagem[x][y][0] = cores[cor][0]
+				imagem[x][y][1] = cores[cor][1]
+				imagem[x][y][2] = cores[cor][2]
 			else:
-				imagem[x][y] = [0,0,0]
+				imagem[x][y] = [000,000,000]
+	
 	saving = outputFile+'-'+str(nIt).zfill(10)+'.png'
 	#sm.imsave( saving, imagem)
 	img.imwrite(saving, imagem, '.png')
 	print('Main - saving',saving)
+	return 0
 
 def contaItens():
 	global ambiente
@@ -178,18 +187,18 @@ class Ant (threading.Thread):
 				time.sleep(0.001)
 
 			threadLockIteracao.acquire()
-			#print("Iteracao ",numIt)
+			
 			self.nIt = numIt
 			numIt += 1
-			threadLockIteracao.release()
 			if self.nIt < NUM_ITERACAO:
-				if self.nIt % (NUM_ITERAC_POR_FORMIGA/2) == 0:
-					threadLock.acquire()
-					threadLockIteracao.acquire()
-					salvaImagem2(self.nIt)
-					threadLockIteracao.release()
-					threadLock.release()
+				#print("Iteracao ",numIt)
 			
+				if self.nIt % (NUM_ITERAC_POR_FORMIGA*2) == 1:
+					threadLock.acquire()
+					salvaImagem2(self.nIt)
+					threadLock.release()
+
+			threadLockIteracao.release()			
 		print( 'Ant', repr(self.threadID).zfill(3), 'X- Finalizando em posicao',[self.posX, self.posY])
 
 	def decide( self):
@@ -242,7 +251,7 @@ class Ant (threading.Thread):
 		valor = distanciaVizinhanca([self.posX, self.posY], itens[item].getDado())
 
 		itemd = itens[int(itensAmbiente[self.posX][self.posY])].getDado()
-		print( 'Ant', repr(self.threadID).zfill(3), ':it', repr(self.nIt).zfill(10),'sobreItem ', valor, self.carga, itemd,contrataxa)
+		#print( 'Ant', repr(self.threadID).zfill(3), ':it', repr(self.nIt).zfill(10),'sobreItem ', valor, self.carga, itemd,contrataxa)
 		if valor <= 1:
 			valor = 1
 		elif valor != 0:
@@ -253,12 +262,13 @@ class Ant (threading.Thread):
 		if( valor > contrataxa):
 			pegaItem = True
 		if( pegaItem):
+			threadLock.acquire()
 			item = int(itensAmbiente[self.posX][self.posY])
 			self.carga = itens[item].getDado()
 			self.idCarga = item
 			itens[item].setPos([-1,-1])
 			ambiente[self.posX][self.posY] = -1
-
+			threadLock.release()
 			return False
 		else:
 			return True
@@ -290,7 +300,7 @@ class Ant (threading.Thread):
 		contrataxa = randint(0,99)/100
 		soltaItem = False
 		valor = distanciaVizinhanca([self.posX, self.posY], self.carga)
-		print( 'Ant', repr(self.threadID).zfill(3), ':it', repr(self.nIt).zfill(10),'carregandoItem ', valor, self.carga,contrataxa)
+		#print( 'Ant', repr(self.threadID).zfill(3), ':it', repr(self.nIt).zfill(10),'carregandoItem ', valor, self.carga,contrataxa)
 		
 		if valor >= 1:
 			valor = 1
@@ -299,11 +309,13 @@ class Ant (threading.Thread):
 		if( valor > contrataxa):
 			soltaItem = True
 		if( soltaItem):
+			threadLock.acquire()
 			item = self.idCarga
-			ambiente[self.posX][self.posY] = itens[item].getGrupo() *-1
+			ambiente[self.posX][self.posY] = -(itens[item].getGrupo()+1)
 			itensAmbiente[self.posX][self.posY] = item
 			self.carga = []
 			self.idCarga = -1
+			threadLock.release()
 			return False
 		else:
 			return True
@@ -373,7 +385,7 @@ class Ant (threading.Thread):
 			
 	def move( self):
 		#print('Ant', repr(self.threadID).zfill(3), ':it', repr(self.nIt).zfill(10),'move')
-		threadLock.acquire() #lock ambiente
+		threadLock.acquire()
 		k1 = self.posX + self.nextmove[0]
 		k2 = self.posY + self.nextmove[1]
 		if (k1 >= N or k2 >= M):
@@ -429,7 +441,6 @@ def distanciaVizinhanca(pos, carga):
 	global RAIOVISAO
 	valor = 0
 	nVizinhos = 0
-	D = 1
 	lx = max( -RAIOVISAO, -pos[0])
 	ly = max( -RAIOVISAO, -pos[1])
 	Lx = min( RAIOVISAO, N-1 - pos[0])
@@ -444,10 +455,7 @@ def distanciaVizinhanca(pos, carga):
 					if( abs(ambiente[x][y]) > 1):
 						item = int(itensAmbiente[x][y])
 						d = itens[item].distancia(carga)
-						D = max(d,D)
-						if D == 0:
-							D = 1
-						v = 1 - d/D
+						v = 1 - d/ALPHA
 						#print( itens[item].getDado(), carga, d, v)
 						if v > 0:
 							valor += v
@@ -494,8 +502,8 @@ def posicionaItens():
 			x = randint(0, N-1)
 			y = randint(0, M-1)
 			#print([x,y])
-			if itensAmbiente[x][y] == 0:
-				ambiente[x][y] = itens[i].getGrupo()
+			if ambiente[x][y] == 1:
+				ambiente[x][y] = itens[i].getGrupo()+1
 				itensAmbiente[x][y] = i
 				itens[i].setPos([x,y])
 				passa = False
@@ -550,6 +558,7 @@ def inicio( argv):
 	global ambiente
 	global agentes
 	global outputFile
+	global NUM_ITERACAO
 	if (len(argv) == 5):
 		for i in range(1,5):
 			if not argv[i].isnumeric():
@@ -571,15 +580,17 @@ def inicio( argv):
 			tam = int(math.sqrt(NUM_ITENS*10/4))
 			N = tam
 			M = tam
-			NUM_FORMIGAS = int( NUM_ITENS/20)
+			NUM_FORMIGAS = min(int( NUM_ITENS/20),20)
 			#return True
 		else:
 			return False
 	outputFile = "iteracoes/"+str(randint(0,1000))+'_rv'+str(RAIOVISAO)+'_nf'+str(NUM_FORMIGAS)+'_ni'+str(NUM_ITENS)
 	criaAmbiente()
 	posicionaItens()
+	salvaImagem2(0)
 	iniciaFormigas()
 	main()
+	salvaImagem2(NUM_ITERACAO)
 	contaItens()
 	return True
 
@@ -604,6 +615,9 @@ def iniciaFormigas():
 
 def main():
 	global agentes
+	global itens
+	cmap = plt.get_cmap('tab20', 20)
+	cmap.set_under('gray')
 	fig, ax = plt.subplots()
 	ani = Animacao(ax)
 	
@@ -613,6 +627,8 @@ def main():
 	for t in agentes:
 		t.join()
 
+	for t in itens:
+		t.printItem()
 # main()
 print('Iniciando')
 if (len(sys.argv) > 1):
@@ -627,5 +643,4 @@ print("Size:["+str(N)+", "+str(M)+"]. Formigas:"+str(NUM_FORMIGAS))
 print("Itens:"+str(NUM_ITENS)+". Dimensão dados:"+str(D_DADO)+". Grupos:"+str(N_TIPO_ITENS))
 #print(ambiente)
 #print(itensAmbiente)
-contaItens()
 print('Finalizando')
