@@ -14,8 +14,8 @@ all: $(TARGET)
 %: %.o
 	$(CC) $(LDFLAGS) $^ -o $@
 
-runRobo: main.c ambiente.o
-	$(CC) $(CCFLAGSOPMP) ambiente.o main.c -o $@ $(LDFLAGS)
+runRobo: main.c ambiente.o robo.o
+	$(CC) $(CCFLAGSOPMP) ambiente.o robo.o main.c -o $@ $(LDFLAGS)
 
 help:
 	@echo

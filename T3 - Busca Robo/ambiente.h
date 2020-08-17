@@ -23,3 +23,4 @@ int mimprimir( ambiente *myambiente);
 
 ambiente *geraambiente( int lin, int col);
 int getAmbiente( int **matriz, FILE *file, int lin, int col);
+int setPesoField( ambiente *amb);

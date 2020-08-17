@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "ambiente.h"
+#include "robo.h"
 
 int main( int argc, char *argv[]){
 	FILE *file = NULL;
@@ -37,5 +38,7 @@ int main( int argc, char *argv[]){
 	fclose(file);
 
 	mimprimir( &myambiente);
+	setPesoField( &myambiente);
+	mimprimir(&myambiente);
 	return 1;
 }
