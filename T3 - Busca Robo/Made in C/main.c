@@ -14,7 +14,6 @@ int main( int argc, char *argv[]){
 		printf("MAIN >> ERROR: PARÂMETROS INCORRETOS\n");
 		exit(1);
 	}
-
 	file = fopen( argv[1], "r");
 	if (file == NULL){
 		printf("MAIN >> ERROR: ABERTURA DO ARQUIVO\n");
@@ -36,9 +35,9 @@ int main( int argc, char *argv[]){
 	}
 	getAmbiente( myambiente.matriz, file, linha, coluna);
 	fclose(file);
-
 	mimprimir( &myambiente);
 	setPesoField( &myambiente);
+	system("clear");
 	mimprimir(&myambiente);
 	return 1;
 }

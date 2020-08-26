@@ -19,6 +19,20 @@ typedef struct{
 	int pontos;
 } movimento;
 
+typedef struct{
+	int x;
+	int y;
+	int distancia;
+	int nCaminhos;
+	struct noLargura *anterior;
+	struct noLargura *caminho;
+} noLargura;
+
 #endif
 
 int inicializaRobo(ambiente *amb);
+
+/*Funcoes Busca Largura*/
+int buscaLargura (ambiente *amb, int *posIni, int *posFim);
+
+int djkistra(ambiente *amb, int *posIni, int *posFim);
