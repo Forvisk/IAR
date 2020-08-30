@@ -51,6 +51,9 @@ class Ambiente(object):
 			for j in range(0, self.size[1]):
 				new.append(vetorPeso[(self.mapa[i][j])])
 			self.peso.append(new)
+	
+	def getMatriz(self):
+		return self.peso
 
 	def getDimensoes(self):
 		return (self.size)

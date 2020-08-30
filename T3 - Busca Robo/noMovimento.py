@@ -10,6 +10,7 @@ class NoMovimento:
 	def __init__(self, pos, ambiente, anterior, indice):
 		self.indice = indice
 		self.pos = np.array(pos)
+		self.ativo = True
 		if len(anterior) != 0:
 			self.anterior = np.array(anterior)
 			self.caminhado = anterior[0].getDistancia() + ambiente.getPeso(self.pos)
@@ -46,7 +47,11 @@ class NoMovimento:
 	def getAnterior(self):
 		return self.anterior
 
+	def ativo():
+		return self.ativo
+
 	def substituiAnterior(self, new):
+		self.ativo = False
 		difCaminhado = self.caminhado - new.getDistancia()
 		difNosCaminhados = self.nosCaminhados - new.getNosCaminhados()
 		for n in self.proximos:
