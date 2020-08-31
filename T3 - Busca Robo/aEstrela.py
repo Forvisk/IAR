@@ -196,7 +196,7 @@ class AEstrela(object):
 	
 	def printAmbiente(self):
 		os.system('clear') or None
-		print('Largura-'+str(id(self)))
+		print('A*-'+str(id(self)))
 		print( 'Nos Visitados atualmente: ' + str(self.nosVisitados))
 		print('Nós a expandir: '+str(self.fronteira.size))
 		i = 0
