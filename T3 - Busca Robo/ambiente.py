@@ -60,3 +60,14 @@ class Ambiente(object):
 
 	def getPeso(self, pos):
 		return self.peso[pos[0]][pos[1]]
+
+	def getCaracter(self, pos):
+		p = self.peso[pos[0]][pos[1]]
+		if p == 1:
+			return [',', 'green']
+		elif p == 5:
+			return ['^', 'yellow']
+		elif p == 10:
+			return ['~', 'blue']
+		elif p == 15:
+			return ['#', 'red']

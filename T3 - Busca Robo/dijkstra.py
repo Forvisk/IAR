@@ -1,6 +1,8 @@
 from noMovimento import NoMovimento
 import numpy as np
 import os
+import sys
+from termcolor import colored, cprint
 
 class Djikstra(object):
 	end = False
@@ -23,6 +25,7 @@ class Djikstra(object):
 
 		self.fronteira = np.array([noInicial])
 		self.explorado = np.empty(0, dtype=object)
+
 		while(self.fronteira.size > 0):
 			prioritNo = self.getPrioritNo()
 			ind = prioritNo[0]
@@ -119,6 +122,10 @@ class Djikstra(object):
 			for i in range(0, listaNos.size-1):
 				listaNos[i].printNo()
 				print('->', end='')
+				pos = listaNos[i].getPos()
+				self.mExplorado[pos[0]][pos[1]] = 4
+			self.mExplorado[self.posIni[0]][self.posIni[1]] = 5
+			self.mExplorado[self.posFim[0]][self.posFim[1]] = 5
 			i = listaNos.size-1
 			listaNos[i].printNo()
 			print('')
@@ -126,12 +133,40 @@ class Djikstra(object):
 			print( 'Nos visitados no menor caminho: ' + str(self.noFinal.getNosCaminhados()))
 			print( 'Nos Visitados no total: ' + str(self.nosVisitados))
 
+			i = 0
+			for line in self.mExplorado:
+				j = 0
+				for n in line:
+					c = self.ambiente.getCaracter([i,j])
+					if self.mExplorado[i][j] == 4:
+						cprint(c[0],c[1],'on_white', end=' ')
+					elif self.mExplorado[i][j] == 5:
+						cprint(c[0],c[1],'on_cyan', end=' ')
+					else:
+						cprint(c[0],c[1], end=' ')
+					j+=1
+				print('')
+				i+=1
+
+	
 	def printAmbiente(self):
 		os.system('clear') or None
-		print('Dijkstra-'+str(id(self)))
+		print('Largura-'+str(id(self)))
 		print( 'Nos Visitados atualmente: ' + str(self.nosVisitados))
 		print('Nós a expandir: '+str(self.fronteira.size))
+		i = 0
 		for line in self.mExplorado:
+			j = 0
 			for n in line:
-				print('{:>2}'.format(n), end=' ')
+				c = self.ambiente.getCaracter([i,j])
+				if i == self.posFim[0] and j == self.posFim[1]:
+					cprint(c[0],c[1], 'on_magenta', end=' ')
+				else:
+					highlight = ['','on_cyan','on_red', 'on_white']
+					if n == 0:
+						cprint(c[0],c[1], end=' ')
+					else:
+						cprint(c[0],c[1], highlight[n], end=' ')
+				j+=1
 			print('')
+			i+=1
