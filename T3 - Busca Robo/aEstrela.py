@@ -214,3 +214,4 @@ class AEstrela(object):
 						cprint(c[0],c[1], highlight[n], end=' ')
 				j+=1
 			print('')
+			i+= 1
