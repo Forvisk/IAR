@@ -164,9 +164,11 @@ class Djikstra(object):
 				else:
 					highlight = ['','on_cyan','on_red', 'on_white']
 					if n == 0:
-						cprint(c[0],c[1], end=' ')
+						cprint(c[0],c[1], end='')
 					else:
-						cprint(c[0],c[1], highlight[n], end=' ')
+						cprint(c[0],c[1], highlight[n], end='')
 				j+=1
 			print('')
 			i+=1
+		#time.sleep(1)
+		input()
