@@ -3,7 +3,6 @@ from random import randint, seed
 
 class InstanciaSAT(object):
 	"""docstring for InstanciaSAT"""
-	nclauses = 0
 	nVariaveis = 0
 	varByClause = 0
 
@@ -61,6 +60,31 @@ class InstanciaSAT(object):
 			i+= 1
 		#print(solucao)
 		return solucao
+
+	def getNClauses(self):
+		return self.nClausulas
+
+	def getnvariaveis(self):
+		return self.nVariaveis
+
+	def avalia(self, solucao):
+		nota = 0
+		resultado = True
+		for c in self.clauses:
+			resultClause = False
+			for v in c:
+				if v > 0:
+					resultClause = resultClause or solucao[v-1]
+					#print(solucao[v-1],end=' ')
+				elif v < 0:
+					resultClause = resultClause or (not solucao[(-v)-1])
+					#print("not"+str(solucao[(-v)-1]),end=' ')
+			if resultClause:
+				nota += 1
+			resultado = (resultado and resultClause)
+			#print(' = '+str(resultClause))
+			#print(resultado)
+		return (nota, resultado)
 
 
 	def print(self):
