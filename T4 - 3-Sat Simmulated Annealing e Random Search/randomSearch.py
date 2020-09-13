@@ -10,14 +10,14 @@ class RandomSearch(object):
 		self.instanciaSat = instanciaSat
 		self.nclauses = self.instanciaSat.getNClauses()
 		self.nvar = self.instanciaSat.getnvariaveis()
-		print (self.nclauses)
+		#print (self.nclauses)
 
-	def run(self, solucaoInicial):
+	def run(self, solucaoInicial, k):
 		#self.instanciaSat.print()
 		melhorSolucao = solucaoInicial
 		resultado = self.instanciaSat.avalia(melhorSolucao)
 		nIt = 0
-		while (nIt < 1000):
+		while (nIt < k):
 			novaSolucao = self.geraSolucao(solucaoInicial)
 			novoResultado = self.instanciaSat.avalia(novaSolucao)
 			if novoResultado[0] > resultado[0]:

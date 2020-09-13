@@ -1,30 +1,45 @@
 from instanciaSAT import InstanciaSAT
 from randomSearch import RandomSearch
+from simulatedAnnealing import SimulatedAnnealing
 
+def runInstancia(filename):
+	instancia = InstanciaSAT(filename)
+	#instancia1.print()
 
-print("\n----- Inicio instancia1 -------")
-instancia1 = InstanciaSAT('uf20-01.cnf')
-instancia1.print()
+	print(" ------ Solução Inicial ",filename," ------")
+	solucaoInicial = instancia.geraSolucao()
+	print(instancia.avalia(solucaoInicial),end="\n\n")
 
-solucaoInicial1 = instancia1.geraSolucao()
-print('---')
-#print(solucaoInicial1)
-print(instancia1.avalia(solucaoInicial1))
-#print(solucaoInicial1.size)
+	print(" ------- Inicio instancia RandomSearch  ",filename," ------- ")
+	rS = RandomSearch( instancia)
+	runsRS1 = []
+	for i in range(0,10):
+		print("RS run ", i)
+		runsRS1.append(rS.run(solucaoInicial, 1000))
+	print(" ------- Fim instancia RandomSearch  ",filename," ------- ",end="\n\n")
 
-rS = RandomSearch( instancia1)
-print(rS.run(solucaoInicial1))
+	print("------- Inicio instancia Simulated Annealing  ",filename," ------- ")
+	SA = SimulatedAnnealing( instancia)
+	temperaturaInicial = SA.getMediaVizinhos(solucaoInicial, 3)
+	#print(temperaturaInicial)
+	runSA1 = []
+	for i in range(0,10):
+		print("SA run ",i)
+		runSA1.append(SA.run(solucaoInicial, 100, temperaturaInicial, 0.01, 40))
+	print("------- Fim instancia Simulated Annealing  ",filename," ------- ",end="\n\n")
 
-print("----- Fim instancia1 -------")
-print("\n----- Inicio instancia2 -------")
-instancia2 = InstanciaSAT('uf100-01.cnf')
-instancia2.print()
-#Instancia 2
-solucaoInicial2 = instancia2.geraSolucao()
-print('---')
-#print(solucaoInicial2)
-print(instancia2.avalia(solucaoInicial2))
-#print(solucaoInicial1.size)
+	print("Solucões RandomSearch cenário: ",filename)
+	n = 0
+	for i in runsRS1:
+		print("Solução ",n,": ",i)
+		n+=1
+	print("")
+	n=0
+	print("Solucões SA cenário: ",filename)
+	for i in runSA1:
+		print("Solução ",n,": ",i)
+		n+=1
 
-rS2 = RandomSearch( instancia2)
-print(rS2.run(solucaoInicial2))
+runInstancia("uf20-01.cnf")
+runInstancia("uf100-01.cnf")
+runInstancia("uf250-01.cnf")

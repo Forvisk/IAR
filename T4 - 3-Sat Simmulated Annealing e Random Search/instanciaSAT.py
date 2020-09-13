@@ -84,7 +84,8 @@ class InstanciaSAT(object):
 			resultado = (resultado and resultClause)
 			#print(' = '+str(resultClause))
 			#print(resultado)
-		return (nota, resultado)
+			contraNota = self.nClausulas-nota
+		return (nota, resultado, contraNota)
 
 
 	def print(self):
