@@ -17,9 +17,14 @@ class RandomSearch(object):
 		melhorSolucao = solucaoInicial
 		resultado = self.instanciaSat.avalia(melhorSolucao)
 		nIt = 0
+		self.flipAnt = 0
 		while (nIt < k):
 			novaSolucao = self.geraSolucao(solucaoInicial)
 			novoResultado = self.instanciaSat.avalia(novaSolucao)
+			if novoResultado[1]:
+				print("RS solução perfeita")
+				#Melhor solução possivel
+				return (novoResultado, novaSolucao)
 			if novoResultado[0] > resultado[0]:
 				#print("Melhor solucao: " +str(resultado)+" < "+str(novoResultado))
 				resultado = novoResultado
@@ -31,6 +36,10 @@ class RandomSearch(object):
 	def geraSolucao(self, solucaoAnterior):
 		seed()
 		pos = randint(1, self.nvar)
+		while pos == self.flipAnt:
+			pos = randint(1, self.nvar)
+		#print(pos)
+		self.flipAnt = pos
 		new = solucaoAnterior.copy()
 		new[pos-1] = not new[pos-1]
 		#print("Flip "+str(pos-1)+" to "+str(new[pos-1])+".")
