@@ -22,7 +22,7 @@ class RandomSearch(object):
 			novaSolucao = self.geraSolucao(solucaoInicial)
 			novoResultado = self.instanciaSat.avalia(novaSolucao)
 			if novoResultado[1]:
-				print("RS solução perfeita")
+				print("RS solução perfeita", end=' - ')
 				#Melhor solução possivel
 				return (novoResultado, novaSolucao)
 			if novoResultado[0] > resultado[0]:

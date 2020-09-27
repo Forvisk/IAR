@@ -1,0 +1,110 @@
+Resultados uf20-01.cnf;
+Solução Inicial;
+(83, False, 8);	;[ True False  True False False False  True  True False False False False
+ False False False False False False False False];
+Resultados RandomSearch;
+SA;r0;3;(86, False, 5);	;[ True False  True False False False  True  True False False False False
+ False False False False False False False  True];
+SA;r1;3;(86, False, 5);	;[ True False  True False False False  True  True False False False False
+ False False False False False False False  True];
+SA;r2;3;(86, False, 5);	;[ True False  True False False False  True  True False False False False
+ False False False False False False False  True];
+SA;r3;3;(86, False, 5);	;[ True False  True False False False  True  True False False False False
+ False False False False False False False  True];
+SA;r4;3;(86, False, 5);	;[ True False  True False False False  True  True False False False False
+ False False False False False False False  True];
+SA;r5;3;(86, False, 5);	;[ True False  True False False False  True  True False False False False
+ False False False False False False False  True];
+SA;r6;3;(86, False, 5);	;[ True False  True False False False  True  True False False False False
+ False False False False False False False  True];
+SA;r7;3;(86, False, 5);	;[ True False  True False False False  True  True False False False False
+ False False False False False False False  True];
+SA;r8;3;(86, False, 5);	;[ True False  True False False False  True  True False False False False
+ False False False False False False False  True];
+SA;r9;3;(86, False, 5);	;[ True False  True False False False  True  True False False False False
+ False False False False False False False  True];
+Resultados Simulated Annealing;
+Cooling Schedule 0;
+SA;r0;0;(90, False, 1);	;[ True  True  True  True False False False  True False  True  True  True
+ False  True False False  True  True False  True];
+SA;r1;0;(89, False, 2);	;[ True False  True  True False False False  True False  True  True False
+  True  True False False False  True False  True];
+SA;r2;0;(90, False, 1);	;[ True False False  True False  True False False  True  True False False
+  True  True False False  True False False False];
+SA;r3;0;(90, False, 1);	;[ True False False  True False False False False False  True False False
+  True  True False False False False False False];
+SA;r4;0;(89, False, 2);	;[ True False  True  True False False False False False  True False False
+  True False  True False  True False False  True];
+SA;r5;0;(89, False, 2);	;[ True  True False  True False False False  True False  True False  True
+ False  True False False False False False  True];
+SA;r6;0;(90, False, 1);	;[ True False False False False False False False  True  True False False
+  True  True False False  True False False  True];
+SA;r7;0;(91, True, 0);	;[ True False False  True False False False False False  True False False
+  True  True  True False  True False False  True];
+SA;r8;0;(89, False, 2);	;[ True False False  True False False False  True False  True False  True
+  True False False False  True False False  True];
+SA;r9;0;(90, False, 1);	;[ True  True  True  True False False False False False  True False False
+  True  True  True False  True False False  True];
+Cooling Schedule 1;
+SA;r0;1;(91, True, 0);	;[ True False False  True False False False  True False  True False False
+  True  True  True False  True False False  True];
+SA;r1;1;(90, False, 1);	;[ True False False  True False  True False False  True False False False
+ False  True  True False  True False False  True];
+SA;r2;1;(91, True, 0);	;[ True False False  True False False False  True False  True False False
+  True  True  True False  True False False  True];
+SA;r3;1;(90, False, 1);	;[ True False False  True False False False  True  True  True False False
+ False  True  True False  True False False  True];
+SA;r4;1;(90, False, 1);	;[ True False False  True False False False False False  True False False
+  True  True  True False  True False False False];
+SA;r5;1;(91, True, 0);	;[ True False False  True False False False False False  True False False
+  True  True  True False  True False False  True];
+SA;r6;1;(91, True, 0);	;[ True False False False False  True False False False False False False
+  True  True  True False  True False False  True];
+SA;r7;1;(90, False, 1);	;[False False False  True False  True False False  True  True False False
+  True  True False False  True False False False];
+SA;r8;1;(91, True, 0);	;[ True False False  True False False False False False  True False False
+  True  True  True False  True False False  True];
+SA;r9;1;(91, True, 0);	;[ True False False  True False False False  True False  True False False
+  True  True  True False  True False False  True];
+Cooling Schedule 2;
+SA;r0;2;(91, True, 0);	;[ True False False  True False  True False False False False False False
+  True  True  True False  True False False  True];
+SA;r1;2;(90, False, 1);	;[ True False False  True False False False False False  True False False
+  True  True False False  True False False False];
+SA;r2;2;(91, True, 0);	;[False  True  True  True False False False  True  True  True  True False
+ False  True  True False  True  True  True  True];
+SA;r3;2;(90, False, 1);	;[False  True  True  True False False False  True  True  True  True False
+ False  True False False  True  True  True  True];
+SA;r4;2;(90, False, 1);	;[False False False  True False  True False False False  True False False
+  True  True  True False  True False False False];
+SA;r5;2;(91, True, 0);	;[ True False False  True False False False  True False  True False False
+  True  True  True False  True False False  True];
+SA;r6;2;(91, True, 0);	;[ True False False  True False  True False False False  True False False
+  True  True  True False  True False False  True];
+SA;r7;2;(90, False, 1);	;[ True False False  True False False False  True  True  True False False
+  True  True False False  True False False  True];
+SA;r8;2;(91, True, 0);	;[ True False False  True False  True False False False  True False False
+  True  True  True False  True False False  True];
+SA;r9;2;(91, True, 0);	;[False  True  True  True False False False  True  True  True  True False
+ False  True  True False  True  True  True  True];
+Cooling Schedule 3;
+SA;r0;3;(90, False, 1);	;[ True False False  True False False False  True False  True False False
+  True False  True False  True False False  True];
+SA;r1;3;(90, False, 1);	;[ True False False  True False False False  True  True  True False False
+ False  True  True False  True False False  True];
+SA;r2;3;(91, True, 0);	;[False  True  True  True False False False  True  True  True  True False
+ False  True  True False  True  True  True  True];
+SA;r3;3;(90, False, 1);	;[ True False False  True False  True False False  True  True False False
+ False  True  True False  True False False  True];
+SA;r4;3;(88, False, 3);	;[ True False False  True False  True False False  True  True  True False
+  True  True False False  True False False  True];
+SA;r5;3;(89, False, 2);	;[False False False  True False  True False False False False False False
+  True  True  True False  True  True False False];
+SA;r6;3;(89, False, 2);	;[ True False False  True False False False  True False  True  True False
+  True  True False False False False False False];
+SA;r7;3;(89, False, 2);	;[False False  True  True False  True False False False False False  True
+ False  True False False  True False False False];
+SA;r8;3;(90, False, 1);	;[ True False  True  True False False False  True False  True  True False
+  True  True False False False False False False];
+SA;r9;3;(90, False, 1);	;[ True  True  True  True False False False False False  True  True False
+  True  True  True False  True  True False  True];

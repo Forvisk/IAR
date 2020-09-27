@@ -4,7 +4,7 @@ from simulatedAnnealing import SimulatedAnnealing
 
 def runInstancia(filename):
 	instancia = InstanciaSAT(filename)
-	nRuns = 1
+	nRuns = 10
 	coolingSchedules = [0,1,2,3]
 	#coolingSchedules = [3]
 	#instancia1.print()
@@ -18,7 +18,7 @@ def runInstancia(filename):
 	runsRS1 = []
 	for i in range(0,nRuns):
 		print("RS run ", i, end=' - ')
-		runsRS1.append(rS.run(solucaoInicial, 1000))
+		runsRS1.append(rS.run(solucaoInicial, 500))
 		print(runsRS1[i][0])
 	print(" ------- Fim instancia RandomSearch  ",filename," ------- ",end="\n\n")
 
@@ -31,7 +31,7 @@ def runInstancia(filename):
 		print(" ------- Cooling Schedule ", typeCooling," ------- ")
 		runSA1 = []
 		for i in range(0,nRuns):
-			print("SA run ",i, "Cooling Schedule ", typeCooling)
+			print("SA run ",i, "Cooling Schedule ", typeCooling, end=' - ')
 			runSA1.append(SA.run(solucaoInicial, 100, temperaturaInicial, 0.01, 40, typeCooling))
 			print(runSA1[i][0])
 		print(" ------- Fim instancia Simulated Annealing  ",filename," ------- ",end="\n\n")

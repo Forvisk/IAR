@@ -1,0 +1,1079 @@
+Resultados uf250-01.cnf;
+Solução Inicial;
+(931, False, 134);	;[ True False  True False False False False False False False  True False
+ False False  True False  True  True  True  True  True  True False False
+ False False False  True False  True False False False False  True False
+ False  True  True False False False  True False False False  True False
+ False False False  True  True False  True False  True False  True  True
+ False  True  True  True  True  True False False  True False False  True
+ False False False False  True False  True False False  True False False
+ False False False False  True  True  True False False False  True False
+  True False False False False False False  True  True False  True  True
+  True False  True  True  True False False False  True  True False  True
+ False  True False  True  True  True False False False False False False
+  True  True False  True False  True  True  True False  True  True False
+ False  True  True  True False False  True False False False False False
+ False  True  True  True False False  True False  True False False  True
+ False  True False  True  True  True False  True False  True  True  True
+ False  True False  True  True  True False False False  True  True  True
+ False  True  True False False  True False  True False False False  True
+ False  True  True False  True False  True False  True  True  True False
+ False False  True False  True False  True  True  True False False  True
+ False False False False  True  True  True  True  True False  True False
+  True  True  True  True  True False  True False  True  True];
+Resultados RandomSearch;
+SA;r0;3;(937, False, 128);	;[ True False  True False False False False False False False  True False
+ False False  True False  True  True  True  True  True  True False False
+ False False False  True False  True False False False False  True False
+ False  True  True False False False  True False False False  True False
+ False False False  True  True False  True False  True False  True  True
+ False  True  True  True  True  True False False  True False False  True
+ False False False False  True False  True False False  True False False
+ False False False False  True  True  True False False False  True False
+  True False False False False False False  True  True False  True  True
+  True False  True  True  True False False False  True  True False  True
+ False  True False  True  True  True False False False False False False
+  True  True False  True False  True  True  True False  True  True False
+ False  True  True  True False False  True False False False False False
+ False False  True  True False False  True False  True False False  True
+ False  True False  True  True  True False  True False  True  True  True
+ False  True False  True  True  True False False False  True  True  True
+ False  True  True False False  True False  True False False False  True
+ False  True  True False  True False  True False  True  True  True False
+ False False  True False  True False  True  True  True False False  True
+ False False False False  True  True  True  True  True False  True False
+  True  True  True  True  True False  True False  True  True];
+SA;r1;3;(937, False, 128);	;[ True False  True False False False False False False False  True False
+ False False  True False  True  True  True  True  True  True False False
+ False False False  True False  True False False False False  True False
+ False  True  True False False False  True False False False  True False
+ False False False  True  True False  True False  True False  True  True
+ False  True  True  True  True  True False False  True False False  True
+ False False False False  True False  True False False  True False False
+ False False False False  True  True  True False False False  True False
+  True False False False False False False  True  True False  True  True
+  True False  True  True  True False False False  True  True False  True
+ False  True False  True  True  True False False False False False False
+  True  True False  True False  True  True  True False  True  True False
+ False  True  True  True False False  True False False False False False
+ False False  True  True False False  True False  True False False  True
+ False  True False  True  True  True False  True False  True  True  True
+ False  True False  True  True  True False False False  True  True  True
+ False  True  True False False  True False  True False False False  True
+ False  True  True False  True False  True False  True  True  True False
+ False False  True False  True False  True  True  True False False  True
+ False False False False  True  True  True  True  True False  True False
+  True  True  True  True  True False  True False  True  True];
+SA;r2;3;(937, False, 128);	;[ True False  True False False False False False False False  True False
+ False False  True False  True  True  True  True  True  True False False
+ False False False  True False  True False False False False  True False
+ False  True  True False False False  True False False False  True False
+ False False False  True  True False  True False  True False  True  True
+ False  True  True  True  True  True False False  True False False  True
+ False False False False  True False  True False False  True False False
+ False False False False  True  True  True False False False  True False
+  True False False False False False False  True  True False  True  True
+  True False  True  True  True False False False  True  True False  True
+ False  True False  True  True  True False False False False False False
+  True  True False  True False  True  True  True False  True  True False
+ False  True  True  True False False  True False False False False False
+ False False  True  True False False  True False  True False False  True
+ False  True False  True  True  True False  True False  True  True  True
+ False  True False  True  True  True False False False  True  True  True
+ False  True  True False False  True False  True False False False  True
+ False  True  True False  True False  True False  True  True  True False
+ False False  True False  True False  True  True  True False False  True
+ False False False False  True  True  True  True  True False  True False
+  True  True  True  True  True False  True False  True  True];
+SA;r3;3;(936, False, 129);	;[ True False  True False False False False False False False  True False
+ False False  True False  True  True  True  True  True  True False False
+ False False False  True False  True False False False False  True  True
+ False  True  True False False False  True False False False  True False
+ False False False  True  True False  True False  True False  True  True
+ False  True  True  True  True  True False False  True False False  True
+ False False False False  True False  True False False  True False False
+ False False False False  True  True  True False False False  True False
+  True False False False False False False  True  True False  True  True
+  True False  True  True  True False False False  True  True False  True
+ False  True False  True  True  True False False False False False False
+  True  True False  True False  True  True  True False  True  True False
+ False  True  True  True False False  True False False False False False
+ False  True  True  True False False  True False  True False False  True
+ False  True False  True  True  True False  True False  True  True  True
+ False  True False  True  True  True False False False  True  True  True
+ False  True  True False False  True False  True False False False  True
+ False  True  True False  True False  True False  True  True  True False
+ False False  True False  True False  True  True  True False False  True
+ False False False False  True  True  True  True  True False  True False
+  True  True  True  True  True False  True False  True  True];
+SA;r4;3;(937, False, 128);	;[ True False  True False False False False False False False  True False
+ False False  True False  True  True  True  True  True  True False False
+ False False False  True False  True False False False False  True False
+ False  True  True False False False  True False False False  True False
+ False False False  True  True False  True False  True False  True  True
+ False  True  True  True  True  True False False  True False False  True
+ False False False False  True False  True False False  True False False
+ False False False False  True  True  True False False False  True False
+  True False False False False False False  True  True False  True  True
+  True False  True  True  True False False False  True  True False  True
+ False  True False  True  True  True False False False False False False
+  True  True False  True False  True  True  True False  True  True False
+ False  True  True  True False False  True False False False False False
+ False False  True  True False False  True False  True False False  True
+ False  True False  True  True  True False  True False  True  True  True
+ False  True False  True  True  True False False False  True  True  True
+ False  True  True False False  True False  True False False False  True
+ False  True  True False  True False  True False  True  True  True False
+ False False  True False  True False  True  True  True False False  True
+ False False False False  True  True  True  True  True False  True False
+  True  True  True  True  True False  True False  True  True];
+SA;r5;3;(936, False, 129);	;[ True False  True False False False False False False False  True False
+ False False  True False  True  True  True  True  True  True False False
+ False False False  True False  True False False False False  True  True
+ False  True  True False False False  True False False False  True False
+ False False False  True  True False  True False  True False  True  True
+ False  True  True  True  True  True False False  True False False  True
+ False False False False  True False  True False False  True False False
+ False False False False  True  True  True False False False  True False
+  True False False False False False False  True  True False  True  True
+  True False  True  True  True False False False  True  True False  True
+ False  True False  True  True  True False False False False False False
+  True  True False  True False  True  True  True False  True  True False
+ False  True  True  True False False  True False False False False False
+ False  True  True  True False False  True False  True False False  True
+ False  True False  True  True  True False  True False  True  True  True
+ False  True False  True  True  True False False False  True  True  True
+ False  True  True False False  True False  True False False False  True
+ False  True  True False  True False  True False  True  True  True False
+ False False  True False  True False  True  True  True False False  True
+ False False False False  True  True  True  True  True False  True False
+  True  True  True  True  True False  True False  True  True];
+SA;r6;3;(937, False, 128);	;[ True False  True False False False False False False False  True False
+ False False  True False  True  True  True  True  True  True False False
+ False False False  True False  True False False False False  True False
+ False  True  True False False False  True False False False  True False
+ False False False  True  True False  True False  True False  True  True
+ False  True  True  True  True  True False False  True False False  True
+ False False False False  True False  True False False  True False False
+ False False False False  True  True  True False False False  True False
+  True False False False False False False  True  True False  True  True
+  True False  True  True  True False False False  True  True False  True
+ False  True False  True  True  True False False False False False False
+  True  True False  True False  True  True  True False  True  True False
+ False  True  True  True False False  True False False False False False
+ False False  True  True False False  True False  True False False  True
+ False  True False  True  True  True False  True False  True  True  True
+ False  True False  True  True  True False False False  True  True  True
+ False  True  True False False  True False  True False False False  True
+ False  True  True False  True False  True False  True  True  True False
+ False False  True False  True False  True  True  True False False  True
+ False False False False  True  True  True  True  True False  True False
+  True  True  True  True  True False  True False  True  True];
+SA;r7;3;(937, False, 128);	;[ True False  True False False False False False False False  True False
+ False False  True False  True  True  True  True  True  True False False
+ False False False  True False  True False False False False  True False
+ False  True  True False False False  True False False False  True False
+ False False False  True  True False  True False  True False  True  True
+ False  True  True  True  True  True False False  True False False  True
+ False False False False  True False  True False False  True False False
+ False False False False  True  True  True False False False  True False
+  True False False False False False False  True  True False  True  True
+  True False  True  True  True False False False  True  True False  True
+ False  True False  True  True  True False False False False False False
+  True  True False  True False  True  True  True False  True  True False
+ False  True  True  True False False  True False False False False False
+ False False  True  True False False  True False  True False False  True
+ False  True False  True  True  True False  True False  True  True  True
+ False  True False  True  True  True False False False  True  True  True
+ False  True  True False False  True False  True False False False  True
+ False  True  True False  True False  True False  True  True  True False
+ False False  True False  True False  True  True  True False False  True
+ False False False False  True  True  True  True  True False  True False
+  True  True  True  True  True False  True False  True  True];
+SA;r8;3;(936, False, 129);	;[ True False  True False False False False False False False  True False
+ False False  True False  True  True  True  True  True  True False False
+ False False False  True False  True False False False False  True False
+ False  True  True False False False  True False False False  True False
+ False False False  True  True False  True False  True False  True  True
+ False  True  True  True  True  True False False  True False False  True
+ False False False False  True False  True False False  True False False
+ False False False False  True  True  True False False False  True False
+  True False False False False False False  True  True False  True  True
+  True False  True  True  True False False False  True False False  True
+ False  True False  True  True  True False False False False False False
+  True  True False  True False  True  True  True False  True  True False
+ False  True  True  True False False  True False False False False False
+ False  True  True  True False False  True False  True False False  True
+ False  True False  True  True  True False  True False  True  True  True
+ False  True False  True  True  True False False False  True  True  True
+ False  True  True False False  True False  True False False False  True
+ False  True  True False  True False  True False  True  True  True False
+ False False  True False  True False  True  True  True False False  True
+ False False False False  True  True  True  True  True False  True False
+  True  True  True  True  True False  True False  True  True];
+SA;r9;3;(937, False, 128);	;[ True False  True False False False False False False False  True False
+ False False  True False  True  True  True  True  True  True False False
+ False False False  True False  True False False False False  True False
+ False  True  True False False False  True False False False  True False
+ False False False  True  True False  True False  True False  True  True
+ False  True  True  True  True  True False False  True False False  True
+ False False False False  True False  True False False  True False False
+ False False False False  True  True  True False False False  True False
+  True False False False False False False  True  True False  True  True
+  True False  True  True  True False False False  True  True False  True
+ False  True False  True  True  True False False False False False False
+  True  True False  True False  True  True  True False  True  True False
+ False  True  True  True False False  True False False False False False
+ False False  True  True False False  True False  True False False  True
+ False  True False  True  True  True False  True False  True  True  True
+ False  True False  True  True  True False False False  True  True  True
+ False  True  True False False  True False  True False False False  True
+ False  True  True False  True False  True False  True  True  True False
+ False False  True False  True False  True  True  True False False  True
+ False False False False  True  True  True  True  True False  True False
+  True  True  True  True  True False  True False  True  True];
+Resultados Simulated Annealing;
+Cooling Schedule 0;
+SA;r0;0;(963, False, 102);	;[False  True  True  True False  True False False False False  True  True
+ False  True  True  True False False  True False False  True False False
+  True  True  True  True False False  True  True  True False  True  True
+  True  True  True False  True False  True False False False  True  True
+ False  True  True  True  True  True False False  True  True  True  True
+ False  True False False False False  True  True  True False  True False
+ False False  True  True  True False False False  True  True  True  True
+  True  True False  True  True  True False  True False  True  True False
+  True  True False False False  True  True  True  True  True  True  True
+  True False False  True False  True  True False False False False False
+ False  True  True  True False  True False  True False False False  True
+ False False  True False  True  True  True False False False  True False
+  True False  True  True False False  True False False False False False
+  True False  True False  True False  True False  True  True  True False
+ False False False False False  True False False False False False  True
+ False  True False  True  True  True False  True  True False False False
+  True False  True False False False False  True  True  True  True  True
+  True  True  True  True False  True False False  True  True False  True
+  True  True False False  True False False  True False False False False
+ False  True  True  True False False False  True False False False  True
+  True  True  True  True  True False False False  True False];
+SA;r1;0;(958, False, 107);	;[False False False False False  True False False False  True  True  True
+ False  True  True  True  True False  True  True False  True False  True
+ False False  True  True  True  True False  True  True False  True False
+  True False False  True False  True False False False  True  True  True
+  True False False  True False  True  True  True False False False False
+  True False False False False False False  True  True False False False
+ False False False False False  True False  True  True False  True False
+ False False False  True False False False False  True False False False
+ False  True False False  True  True  True False  True False  True False
+  True False  True  True False False False False False False False False
+  True False  True  True  True  True  True  True  True  True  True  True
+ False  True  True  True  True False  True  True False False False  True
+  True False False False  True False  True False False  True  True False
+  True False False  True  True False  True  True False  True False  True
+ False  True  True False False False  True  True False False False False
+  True False  True False False  True False  True False False  True False
+ False  True False False False  True False False  True  True  True  True
+ False False  True False False False  True  True False False  True False
+ False False  True False  True  True  True  True False False  True  True
+  True False False  True  True  True False  True  True  True False  True
+  True  True False False  True False False  True  True  True];
+SA;r2;0;(954, False, 111);	;[False False False False False  True False  True  True False  True  True
+ False False  True  True False  True  True False  True False  True  True
+  True False False  True False  True  True  True False  True  True False
+  True  True False  True  True False False  True False False False False
+ False  True  True  True  True  True  True False False  True False  True
+  True False  True False  True  True False  True  True False  True  True
+ False False False False False False  True False False  True  True  True
+ False  True False  True  True False False False  True  True False  True
+ False  True  True False  True False  True  True  True  True  True False
+  True False False  True False False  True  True  True False  True  True
+  True  True False False False  True  True False False  True  True  True
+  True  True False  True False  True  True  True  True False  True False
+  True  True False  True False False  True  True  True False False False
+  True False  True  True False  True False  True False  True  True False
+  True False False False  True False  True  True  True  True  True  True
+ False False False  True  True  True  True  True  True False False False
+ False False  True  True  True False False  True False False  True False
+ False False False  True  True  True False False  True  True False False
+  True False  True False  True False False False  True  True  True False
+  True False False  True False  True  True  True  True  True  True  True
+  True  True  True False False False  True  True False  True];
+SA;r3;0;(968, False, 97);	;[False False  True False False False  True  True False False False  True
+ False  True False  True  True  True False  True  True False False  True
+  True  True  True  True False False  True False False  True  True False
+ False  True False False False  True False False  True  True  True  True
+ False False  True False False  True  True  True  True  True  True False
+ False False False False False  True False  True  True False  True False
+ False  True False  True False False  True False  True False False  True
+  True  True  True  True  True False False False False  True False False
+  True False False  True False  True  True  True False  True  True False
+  True  True False False  True False False  True  True False False  True
+ False  True False  True  True False False False  True False  True  True
+  True  True  True False False False  True  True  True False False False
+  True  True False  True False False False  True False False  True False
+ False  True False  True  True  True False False False False  True False
+ False False False False  True False  True False  True False False False
+ False  True  True False False False  True  True False  True  True False
+ False False False  True  True  True False False False  True  True  True
+ False False False False  True False  True  True  True  True  True False
+  True  True  True  True  True  True False False False False False False
+ False False  True  True False False  True  True  True False False False
+  True False False False False  True  True  True False False];
+SA;r4;0;(967, False, 98);	;[ True False False False  True False False  True False False  True False
+  True False False False  True False  True  True False False False False
+ False False  True False False False  True  True  True False  True False
+ False  True  True False False False False  True False  True  True False
+ False False False False False  True False False  True  True False False
+  True  True False  True False False  True  True False False False False
+ False  True  True False False False  True  True False  True  True  True
+  True False  True  True  True  True  True False False  True False False
+  True  True False False False False False  True  True  True  True False
+  True  True  True False  True False False  True  True False  True False
+  True  True  True  True  True  True  True  True False False  True False
+  True False False  True False False  True  True False  True  True  True
+ False False False  True  True  True False  True  True  True  True  True
+ False False False False False  True False False False  True False False
+  True  True  True  True  True  True False False False  True False  True
+  True False False  True  True  True  True  True False  True  True  True
+ False  True False  True  True  True  True False False False False False
+  True False False False False False  True  True False  True False  True
+  True False  True  True False False False False  True False  True  True
+  True False  True False  True  True  True False  True  True False  True
+  True  True  True  True False  True False False  True  True];
+SA;r5;0;(981, False, 84);	;[ True False  True False  True False  True False False False False False
+  True  True  True  True  True False False False  True  True False False
+  True  True  True False  True  True  True  True False False False False
+  True  True  True  True  True False  True False  True  True False  True
+  True False  True False  True False  True False False  True  True False
+ False False  True  True False False  True False False  True  True False
+ False  True False False  True False  True  True  True False  True  True
+  True  True  True  True  True  True  True False False  True  True False
+ False False False  True False False  True False  True  True False  True
+  True False False  True False  True  True  True  True False False  True
+ False  True False  True False  True False  True False False  True False
+  True False  True False False  True  True  True False False False False
+  True  True  True  True  True  True  True  True  True False  True  True
+ False False False False False  True  True False  True  True False  True
+ False False False  True False False False False False  True  True  True
+ False  True  True False  True False  True False  True  True False  True
+ False False False  True False False False False False  True False  True
+ False False  True False False False  True False False False False  True
+  True False False False False  True  True False False False  True False
+ False  True False False  True False  True False False  True  True False
+  True  True  True  True  True  True False False  True  True];
+SA;r6;0;(960, False, 105);	;[False False False  True  True False  True  True False  True False False
+ False  True False  True  True  True  True  True  True False False  True
+ False  True False False False  True  True False  True False False  True
+  True False False  True  True  True  True  True  True False False False
+ False False  True False  True False False  True False  True  True False
+  True False  True False False False  True False False False False False
+  True  True False  True  True False  True False False  True False False
+ False False  True  True  True False  True  True False False  True False
+ False  True False False False False  True  True False False  True False
+  True False False  True  True False  True  True False False False False
+ False False False  True False False False False False False False False
+  True  True  True  True False False  True  True False False False  True
+ False False  True False  True False  True  True  True False  True False
+  True False  True False False  True False False  True  True  True  True
+  True  True  True  True False  True  True  True False  True False False
+  True  True  True  True  True False  True False False  True  True  True
+  True  True False False False False  True  True False False False False
+ False False False False False  True  True False False  True False  True
+  True False  True False  True False False False False False  True  True
+  True False  True False False  True False  True  True False  True  True
+ False  True  True  True  True  True  True False  True  True];
+SA;r7;0;(964, False, 101);	;[ True  True  True False  True  True False  True False False  True False
+  True  True  True False  True False False  True False False  True  True
+  True  True False  True False  True  True  True  True False False  True
+  True False  True  True  True False False False  True  True False  True
+ False  True False False False  True  True  True False  True  True False
+ False  True  True  True  True False False False  True  True False False
+  True  True False  True False  True False False  True False False False
+  True False  True False False  True False  True  True  True False False
+ False False  True  True  True  True False  True  True  True  True  True
+  True  True  True  True False False False False  True False  True False
+  True False False  True False  True False False  True False  True False
+ False False  True False  True False  True False  True  True False False
+ False False False  True False  True False False False  True  True False
+ False False  True False False False False  True False False  True  True
+  True False  True False  True False False False  True  True False False
+  True False  True False  True  True  True False False  True  True  True
+ False  True False  True False  True False False  True False False False
+  True False False False False  True False  True  True  True False False
+ False False False False False  True False False False  True  True False
+  True False False False  True  True False False False  True False  True
+ False  True False  True False False  True False  True  True];
+SA;r8;0;(969, False, 96);	;[ True False False False False False  True  True  True False  True  True
+ False False  True  True  True  True  True  True  True False False False
+  True  True False False False False False False  True False  True  True
+  True False  True False False False False  True False  True  True False
+ False False  True False False  True False  True False  True  True  True
+  True False False  True False False False False  True False  True False
+  True  True False False False False False False False  True  True False
+  True  True  True False  True  True  True False False False  True  True
+ False  True False  True  True False False  True  True  True  True  True
+  True False  True  True  True  True  True False  True False False  True
+  True  True False False False  True  True False  True False False  True
+ False  True  True  True  True False  True False  True  True  True  True
+ False  True False False False  True False False False  True  True  True
+  True False False False False False  True False  True False False False
+  True False  True  True  True False False  True  True  True False False
+  True  True  True  True False  True  True False False False  True  True
+ False False  True False False False  True  True  True  True False False
+ False False False False  True  True  True False  True  True False  True
+  True  True  True False  True  True  True False  True  True False False
+  True  True  True False  True  True  True  True  True  True  True False
+ False  True False  True  True  True  True False  True False];
+SA;r9;0;(962, False, 103);	;[False False False  True False False  True False False False  True False
+  True False  True  True False  True False  True  True  True  True False
+  True  True False  True  True False  True  True False  True False  True
+  True False False False False False False  True  True False  True False
+  True False  True  True  True False  True False  True False  True False
+ False False  True False False  True  True False  True  True  True False
+ False  True  True False  True  True  True  True False False False False
+ False False  True False  True False False  True  True False False False
+ False False False False  True  True False  True False False  True  True
+  True  True  True  True False  True False  True  True False False False
+ False  True  True False False False  True False False False  True False
+  True False False False False  True  True  True False False  True False
+ False  True False False False False False False False  True  True  True
+  True False False  True  True False  True False False False False False
+  True  True  True  True False  True  True  True False False  True False
+ False False  True False  True False False False  True  True False False
+ False  True False  True  True False  True False  True False  True  True
+ False False  True False False  True False False  True False  True False
+  True False  True  True False False False False  True False  True False
+ False False  True  True False  True  True False False False  True False
+  True False  True False  True False False  True False  True];
+Cooling Schedule 1;
+SA;r0;1;(1048, False, 17);	;[False False  True False  True  True False  True False  True  True False
+  True  True False  True False  True False  True False  True False False
+ False  True  True False False False False  True False False False  True
+  True  True  True  True  True False  True False False False  True  True
+  True  True False False  True False False  True False False False False
+ False False False  True False False  True  True  True False False  True
+ False  True  True  True False False  True False  True False False  True
+ False  True  True  True  True  True  True False False  True False  True
+ False  True  True  True  True  True False  True False False  True False
+  True False  True  True False False  True False  True False False False
+ False  True False False False  True  True False False False  True  True
+  True  True False  True  True False False  True  True  True  True  True
+  True False  True False  True False  True False False False  True  True
+  True False  True  True False  True False  True  True  True False False
+  True False False  True  True  True  True False False False False  True
+  True False  True False False  True  True False False False  True False
+ False  True  True False  True False  True False  True False False  True
+  True False False False  True  True False False False  True  True False
+  True False  True  True False  True False False False False False  True
+  True False  True False False  True False False False  True False  True
+  True  True  True  True False False False  True False False];
+SA;r1;1;(1044, False, 21);	;[False False  True  True  True  True  True  True False  True  True False
+ False False  True  True  True  True  True  True  True False False  True
+  True False False  True False False  True  True False  True False  True
+  True  True False  True False False False False False  True  True  True
+ False False False False  True  True  True  True  True False False  True
+  True False  True False False False False  True False False  True  True
+ False  True False False False False False  True  True False  True False
+ False  True  True False  True  True  True False False False False  True
+ False  True False  True  True False False False  True False False False
+ False False False False False False False False  True False False  True
+ False False False False False  True  True False False  True  True  True
+ False  True False  True  True False  True  True  True False False False
+  True  True False False False  True  True False False  True False False
+  True False  True  True False  True  True  True False False False False
+  True  True False  True  True  True False False  True False False False
+ False  True False  True False  True  True  True False  True False False
+ False  True  True False  True  True False  True  True  True  True  True
+  True  True  True False False  True False  True False  True  True  True
+ False False False  True  True  True False False False  True False False
+  True False False  True False  True  True False  True  True False  True
+ False  True  True  True False  True False False  True  True];
+SA;r2;1;(1045, False, 20);	;[ True False  True False  True False False  True  True  True  True  True
+ False False  True  True  True  True False  True  True False False False
+  True  True False False False  True  True  True  True False  True  True
+  True False  True False  True  True  True  True False  True  True  True
+ False  True  True False  True  True False  True  True False False False
+  True False  True  True False  True  True  True False False False  True
+  True  True  True False False False  True False  True  True  True  True
+ False  True  True  True  True  True  True False False False False False
+  True  True False  True False  True  True  True False  True False False
+ False False  True  True False False  True False  True False False False
+ False  True  True  True  True  True  True False False False False False
+ False  True False  True  True  True  True False False False False  True
+  True False  True  True  True  True  True  True False False  True  True
+  True  True False  True False  True  True False  True False False  True
+  True False  True  True False  True  True  True  True  True False  True
+ False  True False  True False False  True  True False  True  True False
+ False  True  True  True  True False False  True False  True False  True
+ False  True  True False False False  True False  True  True False False
+ False  True  True  True  True  True False False  True  True False False
+  True  True False  True False  True  True  True False  True False False
+ False  True  True  True False False False False  True False];
+SA;r3;1;(1042, False, 23);	;[False False False  True False  True  True False  True False  True False
+ False  True False  True  True  True False False  True False False  True
+  True False  True  True False False  True  True  True False  True  True
+ False  True False  True  True  True  True False  True  True False  True
+ False False  True  True  True False  True  True  True False  True False
+ False False False False  True False False False  True  True  True False
+ False False  True  True False False False False False  True False  True
+ False  True False  True  True False  True  True False  True False False
+  True  True False  True False False False  True  True False False False
+ False  True False  True False False False False  True False False  True
+  True  True False  True  True  True False False False  True False False
+  True False  True  True  True  True  True  True  True False  True False
+ False False  True  True False  True  True False  True False  True  True
+ False False False  True False  True  True False False  True False  True
+  True False  True  True  True False False  True False  True False  True
+  True False  True False  True  True  True  True  True  True  True  True
+  True  True False  True  True False  True  True  True False False False
+ False False False False False False  True  True False  True  True  True
+  True  True  True  True False  True  True False  True False False  True
+  True  True  True  True  True False False False  True  True  True  True
+ False False False False  True False False False False False];
+SA;r4;1;(1041, False, 24);	;[False False False  True False  True  True  True False  True  True  True
+ False  True  True  True False False False  True  True False False False
+  True  True  True  True False False  True  True False  True False  True
+ False False  True  True  True  True False False  True  True  True  True
+ False False  True False  True False  True False False False  True False
+  True  True False False  True  True  True False  True False  True  True
+ False False  True False False  True  True False  True  True False False
+ False  True False  True False False False  True False  True False False
+ False False False  True False  True False False  True  True  True False
+  True False  True  True  True False  True False  True False False  True
+  True  True False  True False False False False False False False False
+  True  True  True False  True False  True False  True  True False False
+ False False  True  True False  True  True False  True  True  True False
+ False False  True False False False  True  True False False False  True
+ False  True  True  True  True  True False False False False False False
+  True  True  True False  True  True  True False  True False  True  True
+ False  True False False  True False  True False  True  True  True  True
+ False  True  True False  True False False False  True  True False  True
+ False False False  True False  True False False  True False False False
+ False False False False False  True  True False False  True  True  True
+  True False  True False  True False False  True False  True];
+SA;r5;1;(1045, False, 20);	;[False False  True False  True  True  True  True  True  True  True False
+ False False False  True  True  True  True False  True False False  True
+  True  True False False False False  True  True False False False False
+  True False  True False  True False  True False False  True  True  True
+ False  True  True  True  True  True  True False  True False  True False
+  True False  True  True False False False False False False False  True
+  True  True False False False False  True  True  True  True  True False
+ False False  True  True False  True  True  True False False False False
+  True  True False  True  True  True  True  True False  True  True False
+  True False  True  True False False False  True  True  True False  True
+ False  True False False False  True  True  True False  True False  True
+  True  True  True  True  True False  True False False False False  True
+  True False  True  True False  True  True False False False False False
+  True  True  True  True False False False False  True False False False
+  True False  True  True False False  True False False False False False
+  True  True  True False False False  True  True False  True False False
+ False False False False  True False  True False  True  True  True  True
+ False False  True False False  True  True  True False  True False  True
+ False False False False False False  True False  True False  True  True
+  True  True False  True False  True False False False False  True False
+ False  True False  True False False False False  True False];
+SA;r6;1;(1037, False, 28);	;[False False False False False False False  True False False False False
+ False False  True False  True  True  True False  True False False False
+  True  True  True  True False False  True  True  True  True  True  True
+  True  True  True  True  True  True  True False False  True  True  True
+ False  True  True  True  True  True False  True  True False  True False
+ False  True  True  True False False False  True False False  True  True
+  True False False False False False False  True  True  True  True False
+  True  True  True  True False  True  True False False  True  True  True
+ False  True  True  True  True  True  True False  True False False  True
+  True False  True  True False False False False  True False  True False
+ False False False  True False  True False  True  True  True  True False
+  True False  True  True  True  True  True False  True  True False  True
+ False  True False False False  True False False False  True  True False
+  True False False  True  True  True  True  True False False False False
+  True False False  True False  True False  True  True False False  True
+  True  True False  True  True False  True False False  True  True  True
+  True  True False  True  True False False  True False  True  True False
+  True  True False False False  True  True  True False  True  True  True
+  True False False  True False False False False  True False False  True
+ False False False False  True  True  True False False False  True False
+ False  True False  True  True False False  True False  True];
+SA;r7;1;(1043, False, 22);	;[False False  True  True False False False False False  True  True  True
+ False False  True  True False  True False  True  True False False False
+  True False  True  True False False  True False  True  True  True  True
+ False False  True False  True False False False False False False  True
+ False  True False False  True  True  True  True  True  True False  True
+ False  True  True False False False  True  True  True False  True False
+ False False  True False False False False False  True False  True False
+ False  True False  True  True False  True  True False False False  True
+ False  True False  True  True False False False  True  True  True  True
+  True  True False  True False False False  True  True False False  True
+ False False False False False  True False False False  True False False
+  True  True False False  True False  True False  True False  True False
+ False False  True  True False False False False  True False  True False
+  True  True  True  True False  True  True  True  True  True False  True
+  True  True False  True False  True  True False False  True False  True
+  True  True  True  True  True  True  True False False  True  True  True
+  True  True False  True  True False False False  True  True  True False
+  True False False False  True False False  True  True False False False
+ False False  True  True  True  True False False  True False False False
+ False False  True False False False  True False  True  True  True  True
+  True False  True False  True False False False  True False];
+SA;r8;1;(1045, False, 20);	;[ True False False False False  True  True False  True  True  True False
+ False  True False  True  True False  True False  True False  True  True
+  True  True  True  True  True  True  True  True False  True False  True
+ False False  True  True  True  True  True False False  True False  True
+ False  True  True False  True  True  True False  True False  True False
+ False  True False False  True False  True False False False  True False
+ False False  True False False False  True  True  True  True False False
+ False  True  True  True  True False False False False  True False  True
+ False False False  True False  True  True False  True  True  True False
+ False  True  True  True  True False False False  True False  True  True
+ False  True False  True  True False  True False False False False False
+  True False  True False  True  True  True False False  True False  True
+ False  True False False False  True  True  True False  True  True False
+  True False  True  True False  True  True False  True False False False
+  True  True  True False  True  True False  True  True False False False
+  True  True False False  True  True  True False False False False  True
+  True False  True  True False  True  True  True  True False False False
+ False False  True False False False False False False  True False  True
+  True  True False  True False  True False False False False False False
+  True False  True False False  True False  True  True  True  True  True
+  True False False  True  True False False False False False];
+SA;r9;1;(1044, False, 21);	;[False False False  True  True  True  True  True False  True  True  True
+  True False  True  True  True False  True  True  True False False False
+ False  True False  True False False  True  True  True  True  True  True
+  True False  True  True  True False  True  True  True False  True  True
+ False  True False  True  True False  True  True  True False  True  True
+ False False False False  True  True  True  True  True False  True False
+ False  True False  True False False False  True  True  True False False
+ False  True False False  True False  True  True False False False False
+ False False False  True  True  True False False False False  True  True
+  True  True False  True False False False False  True False  True  True
+  True  True False  True False  True False False False  True  True  True
+  True False False False  True  True  True  True  True  True  True  True
+  True  True  True  True False False False False  True False  True  True
+  True False False  True False  True  True  True  True  True  True False
+  True False  True  True  True  True  True  True False False  True False
+  True  True  True False  True False  True False  True  True  True False
+ False  True False  True  True  True  True False  True  True  True False
+ False  True  True False  True False False  True False False False False
+  True  True  True False  True False False False  True False  True False
+ False  True  True False  True  True False  True False  True False  True
+ False False False False  True False False  True False False];
+Cooling Schedule 2;
+SA;r0;2;(987, False, 78);	;[False False  True False False  True  True False  True  True  True False
+  True False  True  True  True False False False False False  True False
+  True  True False False False  True  True False  True False  True  True
+  True  True False  True  True False False  True  True False  True False
+ False  True False False  True False False False False  True False False
+ False  True False False False  True False False False False False False
+  True False False False  True False  True False False  True False False
+  True  True False False  True False False  True False False  True False
+  True False False  True False  True False  True  True  True False False
+ False False  True False  True False  True False  True False False  True
+  True  True  True  True  True  True False False  True False  True False
+  True False False False False False  True False False False  True False
+ False False  True False  True False  True  True  True  True  True False
+  True False  True  True False  True False False False  True False False
+  True False  True  True False  True False False False  True False  True
+ False  True False  True False  True  True  True  True False False  True
+ False False False False  True False False False  True  True  True False
+  True False  True False  True  True False False  True False False  True
+  True False False  True  True  True False False False False False  True
+ False False  True False  True  True  True  True False  True  True False
+  True False  True False False False False  True  True False];
+SA;r1;2;(1005, False, 60);	;[False False  True  True  True False  True False  True False  True  True
+ False  True False False  True  True  True False  True False False  True
+ False  True False  True  True False False False  True  True False False
+  True  True  True False  True False False False False  True  True  True
+ False  True  True False  True False  True False False  True False False
+  True  True  True False False False False False  True False  True  True
+ False False False False False False  True  True  True False  True  True
+ False  True  True  True False  True  True False  True False  True False
+ False False False  True  True  True False False False False  True  True
+  True False False False False  True  True False  True False False  True
+ False False  True  True  True False  True False  True  True False  True
+  True False  True False  True  True  True False False False False False
+ False  True  True  True False  True  True  True False  True  True False
+  True False False False False  True  True  True False  True  True False
+  True False  True  True False  True False  True False False  True  True
+  True False  True False False False  True False  True False  True  True
+  True  True False False False False  True False False False False  True
+ False False  True False False False  True  True  True  True  True False
+  True False  True  True  True False False False False  True  True  True
+ False False  True False  True  True  True False False  True False  True
+  True  True  True False  True False False  True False  True];
+SA;r2;2;(1005, False, 60);	;[ True False  True False  True  True False False False  True False False
+  True  True  True  True False False  True  True  True False  True  True
+ False  True  True  True  True False  True  True  True  True False  True
+ False  True False False False False False  True  True  True False False
+  True  True  True  True  True  True  True  True  True False  True  True
+  True  True False False  True False False  True False  True False  True
+ False False  True  True False False False  True  True False  True False
+  True  True False  True False False  True False  True  True  True False
+ False  True  True  True  True False False False False False False  True
+ False  True False False  True False False False  True False  True False
+ False  True False  True  True  True  True False  True False  True False
+  True False  True False  True  True  True False False False False False
+  True  True False False  True False  True False  True False False  True
+ False False False False False False False False False False False False
+ False False False False  True  True False False False False False  True
+  True  True  True False False  True  True False  True False  True  True
+ False False False False  True False  True False False  True  True False
+  True False  True False False False  True False  True False False  True
+ False False False  True False False  True False False False False False
+ False False  True  True False False False False False  True False  True
+  True  True  True False  True False  True False False  True];
+SA;r3;2;(1010, False, 55);	;[False False  True False  True False False  True  True  True  True  True
+ False  True  True  True  True  True  True  True  True  True False False
+  True  True False False  True  True  True  True  True  True  True False
+ False False False  True False False False  True False  True False False
+  True  True  True  True  True False False  True  True False False False
+ False False False  True False False  True  True False  True False  True
+ False False  True  True False False  True False  True  True  True False
+  True  True False  True False  True  True  True False False False False
+  True False False False  True  True  True  True  True  True  True False
+ False  True  True False False False False  True False False False  True
+  True  True False False  True  True False False False False False False
+  True False  True False  True False False  True False False False False
+  True False  True  True  True False  True  True False False False  True
+ False False False  True False False  True  True False False False False
+  True False False  True False False  True  True False  True False  True
+  True False  True False  True False  True False False  True False  True
+ False  True False  True  True False  True  True False False False False
+  True False  True False False False  True  True  True  True  True  True
+  True  True  True  True False False  True  True  True False  True  True
+  True  True False  True False  True  True  True  True  True False False
+  True  True  True  True  True False False  True False  True];
+SA;r4;2;(1006, False, 59);	;[False False False False False  True  True  True False  True  True False
+  True  True False  True  True False False False  True False False  True
+ False  True  True  True  True False  True False False  True  True  True
+ False  True  True  True  True  True  True False  True  True  True  True
+ False  True  True  True  True  True  True  True  True False False  True
+ False  True False  True  True False False  True False False  True  True
+ False  True  True False  True False  True False  True  True  True False
+ False  True  True  True  True  True  True False False  True  True False
+  True  True False  True  True  True False False False  True  True  True
+ False  True False False  True False False False  True False  True  True
+  True  True False  True  True  True False False False  True  True False
+  True  True  True False False  True  True False False False False  True
+ False False False  True False False False False  True False  True False
+ False False False  True False False  True  True False  True  True  True
+  True False  True  True  True False False  True False False False  True
+  True False  True False False False False  True  True  True  True  True
+ False  True  True  True  True  True False False False False False  True
+ False False False False False False  True False  True False  True  True
+ False False  True  True  True False False  True False False False False
+ False False False False  True  True False False False  True  True  True
+  True  True False False  True  True False False False False];
+SA;r5;2;(994, False, 71);	;[ True  True  True False False  True False False False False  True  True
+ False  True  True False False  True False False False False  True False
+  True  True  True False  True  True False False False  True  True False
+  True  True  True  True  True  True False False  True  True  True  True
+  True  True False False  True  True False  True False False False False
+  True False  True False False  True False  True  True False  True  True
+  True False  True  True  True False  True  True  True  True  True  True
+ False False False  True False False  True  True False  True False  True
+ False False  True  True False  True False False False False  True False
+  True False False  True False False  True False  True False  True  True
+ False  True  True  True False False  True False  True  True  True False
+  True False  True  True False False False False False  True  True False
+  True  True  True  True  True False False False False False False  True
+ False False  True  True  True  True  True False False  True  True False
+ False False  True  True False False  True False False  True False False
+  True  True  True  True  True False  True  True False False  True  True
+ False  True  True  True  True False  True  True False False False  True
+  True  True  True False  True False  True  True  True  True  True False
+  True False  True False False  True False False  True  True False False
+  True  True  True False  True  True False  True False  True False  True
+ False False  True False False False False False  True  True];
+SA;r6;2;(1006, False, 59);	;[False False False  True False  True  True False  True False  True False
+ False  True False  True False False False False  True False False False
+  True  True  True  True  True  True  True  True  True  True  True False
+ False  True False  True False False False False False False  True  True
+ False  True False  True  True  True False  True False False  True False
+  True  True False  True False False  True False False  True False False
+ False  True  True  True  True False False  True False  True False  True
+ False  True False  True  True False  True  True False False  True False
+  True  True  True  True False  True  True False False  True False False
+ False  True False  True False False False  True  True False False False
+  True False False  True  True  True  True  True False False  True False
+  True False False False  True  True  True  True False False  True False
+  True  True False  True False  True False  True False  True  True False
+  True False False False False  True  True False  True False False False
+  True False False  True False  True False  True False  True False  True
+  True  True False False False False  True False  True False  True  True
+ False False False  True  True False  True False  True  True  True  True
+ False False  True False False False  True  True  True  True False  True
+ False  True  True  True  True False  True False  True False False  True
+  True  True  True False  True False False False  True False  True False
+  True False False False  True  True False False False False];
+SA;r7;2;(1007, False, 58);	;[False False  True False  True False  True False False  True  True False
+ False  True  True False False  True False  True  True False False False
+ False False False False  True False  True  True  True False  True  True
+ False False  True False  True False False False  True False  True False
+  True  True  True False False False False False  True False False False
+  True False False  True False  True  True  True  True  True False  True
+ False False False False False False  True False  True  True False False
+ False  True False False False  True  True False False False False  True
+  True  True False False  True False False  True False  True  True False
+  True  True False False  True False False False  True  True  True  True
+ False  True False False False  True False False False False False  True
+ False  True False  True  True  True  True False  True False  True False
+ False False  True  True False  True  True False  True  True  True False
+  True False  True  True False False  True  True False  True  True  True
+  True False  True False False False  True  True  True False  True  True
+  True False  True False  True False  True  True False False  True False
+ False False  True False  True  True False False False False False False
+ False False False  True False False  True  True False  True False  True
+ False  True  True  True  True  True  True False  True False False  True
+ False False False False False False False False False  True  True False
+  True  True False False False False False False  True False];
+SA;r8;2;(1004, False, 61);	;[False False  True False False False  True False  True  True False  True
+  True  True  True  True False  True False  True  True  True False  True
+  True  True  True  True False False  True False False False  True  True
+  True False  True  True  True  True  True False  True  True  True False
+ False False  True  True  True False  True False False False  True  True
+ False False  True  True False False False  True  True False False False
+ False  True  True False False False  True False  True  True False  True
+ False  True  True  True  True False False False  True  True False False
+ False  True False  True  True False  True  True  True False  True  True
+  True  True False  True  True False False  True  True False False False
+ False  True  True  True False  True False False False  True False False
+ False False False False False False  True False  True  True False  True
+  True False False False False False False  True False False  True  True
+  True False False False  True  True  True  True False  True  True False
+  True False  True  True  True False  True False False False False False
+  True  True False  True  True  True  True  True  True False  True False
+ False  True False  True  True False  True  True False  True  True  True
+  True  True  True False  True False False  True  True  True  True  True
+ False  True  True False False  True False  True  True False  True  True
+ False False False False False  True  True False False  True False  True
+ False  True  True False False False  True False False  True];
+SA;r9;2;(1018, False, 47);	;[ True False False  True False  True  True  True False  True False  True
+  True  True False  True  True False False False  True False False False
+ False False  True False  True  True False  True  True  True  True  True
+  True False  True  True  True False  True False False  True  True  True
+ False False False False  True  True  True  True  True  True  True False
+  True False False  True False  True  True False False  True  True  True
+  True  True False False False  True False False False False  True  True
+ False False  True  True  True  True  True False False False False  True
+ False  True False False  True False False  True  True  True False  True
+ False  True  True False  True False  True  True False False  True  True
+  True  True False False False  True False  True  True  True False False
+ False  True  True False  True False  True False  True False  True False
+ False False  True  True False  True False  True  True False  True False
+ False False  True False False False  True  True  True False False False
+ False False False  True False False  True False  True False False  True
+ False  True False False False False  True  True False False  True  True
+ False False  True False  True False False False  True  True False False
+ False  True  True False  True False False False False  True False  True
+ False False False  True False False  True False False False  True  True
+ False False False False False  True  True False  True False  True  True
+ False  True  True  True False False False False False False];
+Cooling Schedule 3;
+SA;r0;3;(973, False, 92);	;[False False  True False  True False  True False  True False  True  True
+ False  True  True  True  True False False  True False False  True  True
+  True  True False False False False  True  True False False  True  True
+  True False  True False False  True  True False False False False  True
+ False  True  True False  True False False  True  True False  True  True
+  True False False  True False False  True False  True False False False
+  True  True  True False False False  True False False False  True False
+ False False False  True False  True  True  True False False False False
+  True False False  True  True False False  True  True False False False
+ False False False  True False False False  True  True False False False
+  True False  True False False  True False  True False False  True  True
+  True False  True  True  True  True  True False False  True False  True
+  True  True False  True False  True  True  True  True  True  True  True
+  True  True  True  True  True  True  True False  True False  True  True
+  True  True False  True  True False False False False  True False  True
+  True False False  True False  True  True  True  True False False  True
+  True  True False False False False  True False False False False False
+  True  True  True  True  True False  True False  True False  True False
+  True False  True  True False False  True  True False False False False
+  True  True  True False False False  True False False  True False False
+ False  True False  True  True False  True False  True  True];
+SA;r1;3;(993, False, 72);	;[False False  True False  True False  True False  True  True False  True
+ False  True  True  True False  True  True  True False  True  True False
+  True False False  True  True False False False  True False  True False
+  True False  True False  True False  True  True  True  True False False
+ False  True False False False  True False False False False  True False
+ False  True  True False False False  True  True False  True False False
+  True  True  True  True False  True False False  True  True False False
+  True  True  True False  True False False False  True False False False
+ False  True  True False  True  True False False False  True False False
+ False  True False  True False False False False  True  True  True False
+ False  True  True False False False  True False  True False  True  True
+ False  True False False False False False False  True False False  True
+ False False  True False False False  True  True False  True False  True
+  True False  True  True False False  True False  True False False False
+ False False False False  True  True False  True False False False  True
+ False  True False  True False  True  True False False  True  True False
+ False  True False False  True False  True False  True  True False False
+  True  True False False False False  True  True False  True  True  True
+ False  True False False False False  True  True  True False False False
+  True False  True False False  True False False  True False False  True
+ False False  True False False False False False  True False];
+SA;r2;3;(971, False, 94);	;[False False  True False  True False  True False False  True False  True
+  True  True  True False False  True False  True  True  True  True False
+ False  True  True  True False  True  True  True  True False  True False
+  True  True False  True  True False  True  True  True  True  True  True
+ False  True  True False False  True False False  True False False False
+  True  True False False  True  True False False False False  True False
+  True False  True  True False False  True  True  True  True False False
+  True False False False False  True False  True False  True  True  True
+  True False  True  True  True  True False False  True  True  True False
+ False False  True False  True False False False False  True False  True
+ False  True False  True False False False False False False False  True
+ False  True False  True  True False False False  True False  True  True
+ False  True  True False False  True  True False False  True  True False
+  True False False False False  True  True False False False False  True
+  True False  True False  True False  True  True False False  True False
+ False  True False False  True False  True  True  True False False  True
+  True  True  True  True  True False  True False  True False False  True
+  True  True False False False False  True False  True  True False  True
+  True False  True False False  True  True False False  True False  True
+  True False False  True False  True False  True  True False  True  True
+ False  True False False False  True False False False  True];
+SA;r3;3;(974, False, 91);	;[False  True  True False  True False  True False False  True False  True
+ False  True  True False  True False False False False  True False  True
+  True False  True False False False  True False False False False False
+ False  True  True  True  True False  True False False  True  True  True
+ False False  True  True False  True False False False  True  True  True
+  True  True  True  True  True  True  True  True  True False  True  True
+  True  True False False False  True  True False False False  True  True
+ False  True False  True False False  True  True False False  True False
+  True  True False False  True  True  True  True False  True False  True
+  True  True  True  True  True  True False  True False  True False  True
+  True False  True False  True  True False  True  True  True False  True
+ False False False False  True False  True False  True  True False  True
+  True False False  True False False False False False False False False
+  True False  True False False False False  True  True False  True  True
+  True False False False False False False False False False False  True
+  True False  True  True False  True  True False  True False False  True
+  True  True False  True False False False False False  True False  True
+ False False False False  True False  True False  True False False  True
+  True False  True False  True  True False False  True False False  True
+ False False  True False False False False False  True  True  True  True
+ False  True  True False False  True False False False False];
+SA;r4;3;(980, False, 85);	;[False  True False  True  True False False  True  True  True False False
+ False False  True  True False  True  True  True  True  True False False
+  True False  True False False  True  True  True  True  True  True False
+  True False False False  True False  True  True  True  True  True  True
+ False  True False  True False  True False  True  True False  True  True
+  True  True False False False False False False  True False  True False
+  True  True False False False False  True  True False False  True False
+  True  True False  True  True  True  True False  True  True False  True
+ False False False False  True False False False  True  True False False
+ False False False False False False False  True  True False  True  True
+  True  True False False False  True  True  True  True False  True  True
+ False  True  True  True  True False  True False False  True  True  True
+ False False  True  True  True  True False False  True  True  True  True
+  True False  True  True False False  True  True  True  True  True False
+  True False  True  True False  True False False  True False False False
+ False False False False  True False  True  True False False  True False
+ False  True  True  True  True False  True  True  True  True  True False
+  True  True  True False  True False  True  True False  True False  True
+  True False False False  True  True  True False False False  True False
+  True  True False False False  True False  True  True  True  True False
+  True  True  True  True  True  True False False False False];
+SA;r5;3;(983, False, 82);	;[ True False  True False  True False  True  True  True  True False  True
+ False  True  True False False  True  True False False False False False
+ False  True  True False  True  True  True  True False False  True  True
+ False False  True  True False  True  True False False  True False False
+ False False False False  True False  True  True  True False  True False
+ False  True False  True  True  True False  True  True  True  True False
+ False  True False False False  True False False  True False False  True
+  True False  True  True False  True False False False False  True  True
+ False False False False False  True  True  True False False  True False
+  True  True False  True  True False False False False False  True False
+ False False False  True False  True False False False False  True False
+  True  True  True False  True  True  True False False False  True False
+  True  True  True  True False False False False False  True  True  True
+  True  True False False  True  True False False  True  True False  True
+ False  True False  True False False False  True False False False False
+ False False  True False False  True  True  True  True False  True  True
+  True  True  True  True False  True  True  True  True  True False  True
+ False  True  True  True False  True  True  True False  True False False
+  True  True  True  True False  True False False False False False False
+  True  True  True False  True  True False False False  True  True False
+  True  True False  True  True False False False  True False];
+SA;r6;3;(973, False, 92);	;[False False False  True  True False  True  True  True  True  True  True
+  True  True False False False  True  True False  True False  True False
+ False  True  True  True  True  True  True False  True  True  True  True
+  True  True  True  True  True False  True  True  True  True  True  True
+  True  True  True False  True False  True  True  True  True  True False
+  True  True False  True False  True  True  True  True False  True  True
+  True  True  True  True False False False False  True False  True  True
+  True False False  True False  True False  True False  True  True False
+ False  True False  True  True  True  True False False False False  True
+  True False  True False  True False False False  True False  True  True
+  True  True False False  True  True  True False  True  True  True False
+  True  True  True False False  True False  True False  True False False
+  True False  True  True False False False False False False False  True
+ False  True False False False  True False  True  True  True  True False
+ False  True  True  True False False False False False False False  True
+ False False  True  True False  True False  True False  True False False
+  True False False  True False  True  True False False  True  True False
+  True False  True  True  True False  True  True False  True  True False
+ False  True  True False  True False False False False  True  True  True
+  True False  True  True  True  True False False False  True False  True
+  True  True  True  True  True False False  True  True False];
+SA;r7;3;(985, False, 80);	;[False  True False False False  True False False False  True False  True
+  True  True False False False False False False  True False  True False
+ False  True  True False  True False False False False False  True False
+ False  True  True False  True False False  True  True False  True False
+  True False  True  True False  True False  True  True False  True  True
+ False  True  True  True  True  True False False  True  True False  True
+  True  True  True False  True False False False  True False  True False
+  True False False  True False  True  True  True False  True False  True
+ False  True  True False  True False False False  True False  True False
+  True  True False False  True False  True  True  True False False  True
+ False  True  True  True False  True False False False False  True False
+ False  True False False  True False False False  True  True False False
+ False  True  True  True False False False  True  True False  True  True
+ False False  True  True False  True False False False False  True  True
+ False False  True  True  True False  True  True False False False  True
+  True  True  True  True False False False  True False False False  True
+  True  True  True  True False  True  True False False False False  True
+  True  True False False False False  True  True  True  True  True False
+ False  True False False  True False False False  True False False False
+ False  True  True  True False False False False False False  True False
+  True False  True False  True False  True  True False  True];
+SA;r8;3;(989, False, 76);	;[False False False False False False  True  True False False False  True
+ False  True False  True False  True  True  True False False False False
+  True  True False  True False False  True False  True  True  True  True
+  True  True  True False False False False False False False  True False
+ False  True  True  True  True False False False False False False False
+  True  True False  True  True  True False  True False False False  True
+  True  True False  True False  True False  True False  True  True  True
+ False False False  True False  True False False  True False  True  True
+ False  True False False False  True  True  True  True  True False False
+  True  True False False  True  True False False False  True False  True
+  True False False  True  True  True  True  True False False  True  True
+ False False  True False False  True  True False False  True False  True
+  True  True False  True False  True  True  True  True False  True False
+  True False  True  True  True  True  True False  True False False False
+ False False False False False  True False  True  True  True  True  True
+  True False  True False  True  True  True  True  True  True  True  True
+ False  True False  True  True False  True False  True False False False
+  True False  True  True  True False  True  True  True False False False
+  True  True False False False  True  True False  True False False  True
+  True  True False  True False  True  True  True False  True  True False
+  True False  True False  True False  True  True False False];
+SA;r9;3;(971, False, 94);	;[ True False False False  True False  True False  True  True  True  True
+ False  True False False False  True  True False False  True False False
+ False  True False False  True  True False  True  True False  True  True
+ False False False False  True False  True False False False False  True
+  True  True False  True  True  True  True False  True  True  True False
+  True  True False  True False  True  True False  True  True  True False
+ False False  True False  True  True False  True  True False False False
+ False  True  True  True False False  True False  True False  True  True
+ False  True False  True  True False  True False False  True  True  True
+ False  True False  True  True  True False False False False False  True
+ False False False False  True  True  True False  True  True  True  True
+ False False False False  True  True  True False  True False  True  True
+ False  True False False  True  True False  True False  True False False
+ False False  True False False False  True False False  True  True  True
+ False  True  True  True  True  True False  True  True False False  True
+ False False  True False  True  True  True False  True  True  True False
+ False  True  True False  True False  True  True  True False False  True
+  True  True False False False  True  True False False False False  True
+  True  True False  True  True  True  True  True False False False  True
+  True False  True False False False False False False False  True  True
+ False  True False  True False  True False  True  True  True];
