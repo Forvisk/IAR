@@ -16,21 +16,25 @@ class RandomSearch(object):
 		#self.instanciaSat.print()
 		melhorSolucao = solucaoInicial
 		resultado = self.instanciaSat.avalia(melhorSolucao)
+		convergencia = []
 		nIt = 0
 		self.flipAnt = 0
 		while (nIt < k):
-			novaSolucao = self.geraSolucao(solucaoInicial)
+			#novaSolucao = self.geraSolucao(solucaoInicial)
+			novaSolucao = self.instanciaSat.geraSolucao()
 			novoResultado = self.instanciaSat.avalia(novaSolucao)
+			convergencia.append([nIt, novoResultado[0]])
 			if novoResultado[1]:
 				print("RS solução perfeita", end=' - ')
 				#Melhor solução possivel
-				return (novoResultado, novaSolucao)
+				return (novoResultado, novaSolucao, convergencia)
 			if novoResultado[0] > resultado[0]:
 				#print("Melhor solucao: " +str(resultado)+" < "+str(novoResultado))
+				convergencia.append([nIt, novoResultado[0]])
 				resultado = novoResultado
 				melhorSolucao = novaSolucao
 			nIt += 1
-		return (resultado, melhorSolucao)
+		return (resultado, melhorSolucao, convergencia)
 
 
 	def geraSolucao(self, solucaoAnterior):

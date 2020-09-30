@@ -18,7 +18,7 @@ def runInstancia(filename):
 	runsRS1 = []
 	for i in range(0,nRuns):
 		print("RS run ", i, end=' - ')
-		runsRS1.append(rS.run(solucaoInicial, 500))
+		runsRS1.append(rS.run(solucaoInicial, 2000))
 		print(runsRS1[i][0])
 	print(" ------- Fim instancia RandomSearch  ",filename," ------- ",end="\n\n")
 
@@ -45,17 +45,23 @@ def runInstancia(filename):
 	rini = str(instancia.avalia(solucaoInicial))
 	rrini = str(solucaoInicial)
 	f.write("Solução Inicial;\n"+rini+";\t;"+rrini+";\n")
+	print("")
+	f.write("\n")
 	print("Solucões RandomSearch cenário: ",filename)
 	f.write("Resultados RandomSearch;\n")
 	n = 0
 	for i in runsRS1:
-		print("Solução ",n,": ",i)
+		print("Solução ",n,": ",i[0]," ",i[1])
 		res = str(i[0])
 		vecRes = str(i[1])
 		f.write("SA;r"+str(n)+";"+str(typeCooling)+";"+res+";\t;"+vecRes+";\n")
+		sconvergencia = str(i[2])
+		f.write("Convergencia: ")
+		f.write(sconvergencia+"\n")
 		#f.write(vecRes+";")
 		n+=1
 	print("")
+	f.write("\n")
 	print("Solucões SA cenário: ",filename)
 	f.write("Resultados Simulated Annealing;\n")
 	v = 0
@@ -64,11 +70,14 @@ def runInstancia(filename):
 		print("Cooling Schedule ", typeCooling)
 		n=0
 		for i in runCoolingSchedule[v]:
-			print("Solução ",n,": ",i)
+			print("Solução ",n,": ",i[0]," ",i[1])
 			res = str(i[0])
 			vecRes = str(i[1])
 			f.write("SA;r"+str(n)+";"+str(typeCooling)+";"+res+";\t;"+vecRes+";\n")
 			#f.write(vecRes+";")
+			f.write("Convergencia: ")
+			sconvergencia = str(i[2])
+			f.write(sconvergencia+"\n")
 			n+=1
 		v+=1
 	f.close()

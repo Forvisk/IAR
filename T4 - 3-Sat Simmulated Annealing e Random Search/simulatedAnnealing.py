@@ -19,6 +19,8 @@ class SimulatedAnnealing(object):
 		melhorSolucao = solucao
 		resultadoMelhorSolucao = resultadoSolucao
 		i = 0
+		nIt = 0
+		convergencia = []
 		while temp > tempFim:
 			#print(temp)
 			k = 0
@@ -28,7 +30,8 @@ class SimulatedAnnealing(object):
 				resultadoNewSolucao = self.instanciaSat.avalia(newSolucao)
 				if(resultadoNewSolucao[1]):
 					print("SA solução perfeita", end=' - ')
-					return (resultadoNewSolucao, newSolucao)
+					convergencia.append([nIt,resultadoNewSolucao[0]])
+					return (resultadoNewSolucao, newSolucao, convergencia)
 					#Resultado perfeito
 				delta = resultadoNewSolucao[2] - resultadoSolucao[2]
 				#print( resultadoNewSolucao, resultadoSolucao, delta, temp)
@@ -36,6 +39,7 @@ class SimulatedAnnealing(object):
 					solucao = newSolucao
 					resultadoSolucao = resultadoNewSolucao
 					if resultadoNewSolucao[0] > resultadoMelhorSolucao[0]:
+						convergencia.append([nIt,resultadoNewSolucao[0]])
 						melhorSolucao = newSolucao
 						resultadoMelhorSolucao = resultadoNewSolucao
 						#print("nova Melhor solução:" + str(resultadoMelhorSolucao) + ". T= "+str(temp))
@@ -45,14 +49,17 @@ class SimulatedAnnealing(object):
 					#print("---")
 					#print(x," < ",f, " ?")
 					if x < f:
+						convergencia.append([nIt,resultadoNewSolucao[0]])
 						solucao = newSolucao
 						resultadoSolucao = resultadoNewSolucao
 						#print("Nova solução "+str(resultadoSolucao)+". T= "+str(temp))
 					#print("---")
+				nIt += 1
 			i += 1
 			temp = temperatura(tempIni, tempFim, i, N, typeCooling)
 			#print(temp)
-		return (resultadoMelhorSolucao, melhorSolucao)
+		convergencia.append([nIt, resultadoMelhorSolucao[0]])
+		return (resultadoMelhorSolucao, melhorSolucao, convergencia)
 
 	def getVizinho(self, solucao):
 		seed()
