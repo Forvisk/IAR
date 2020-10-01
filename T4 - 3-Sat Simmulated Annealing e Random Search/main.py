@@ -39,7 +39,7 @@ def runInstancia(filename):
 
 
 	print(" ---- RESULTADOS ---- ")
-	outputFilename = filename+".resultados.txt"
+	outputFilename = 'Resultados/'+filename+".resultados.txt"
 	f = open(outputFilename, "w")
 	f.write("Resultados "+filename+";\n")
 	rini = str(instancia.avalia(solucaoInicial))
@@ -55,9 +55,10 @@ def runInstancia(filename):
 		res = str(i[0])
 		vecRes = str(i[1])
 		f.write("SA;r"+str(n)+";"+str(typeCooling)+";"+res+";\t;"+vecRes+";\n")
-		sconvergencia = str(i[2])
-		f.write("Convergencia: ")
-		f.write(sconvergencia+"\n")
+		#f.write("Convergencia: ")
+		#sconvergencia = str(i[2])
+		#f.write(sconvergencia+"\n")
+		saveInstancia( filename+"_RS_"+str(n), i[2])
 		#f.write(vecRes+";")
 		n+=1
 	print("")
@@ -73,13 +74,20 @@ def runInstancia(filename):
 			print("Solução ",n,": ",i[0]," ",i[1])
 			res = str(i[0])
 			vecRes = str(i[1])
-			f.write("SA;r"+str(n)+";"+str(typeCooling)+";"+res+";\t;"+vecRes+";\n")
-			#f.write(vecRes+";")
-			f.write("Convergencia: ")
-			sconvergencia = str(i[2])
-			f.write(sconvergencia+"\n")
+			f.write("SA;r"+str(n)+"_cs"+str(typeCooling)+";"+str(typeCooling)+";"+res+";\t;"+vecRes+";\n")
+
+			#f.write("Convergencia: ")
+			#sconvergencia = str(i[2])
+			#f.write(sconvergencia+"\n")
+			saveInstancia( filename+"_SA_cs"+str(typeCooling)+"_"+str(n), i[2])
 			n+=1
 		v+=1
+	f.close()
+
+def saveInstancia( filename, instancia):
+	f = open('Resultados/'+filename+".csv", "w")
+	for l in instancia:
+		f.write(str(l[0])+","+str(l[1])+"\n")
 	f.close()
 
 runInstancia("uf20-01.cnf")

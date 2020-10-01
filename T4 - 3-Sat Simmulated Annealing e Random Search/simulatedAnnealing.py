@@ -71,7 +71,7 @@ class SimulatedAnnealing(object):
 
 	def getMediaVizinhos(self, solucaoInicial, nVizinhos):
 		valor = 0
-		resultadoSolucaoInicial = self.instanciaSat.avalia(solucaoInicial)
+		#resultadoSolucaoInicial = self.instanciaSat.avalia(solucaoInicial)
 		for i in range(0,nVizinhos):
 			vizinho = self.getVizinho(solucaoInicial)
 			resultadoVizinho = self.instanciaSat.avalia(vizinho)
